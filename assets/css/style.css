@@ -32,7 +32,7 @@ body {
   font-weight: 600;
 }
 
-.category-card__heading__title, .section-header__title {
+.sub-banner__title, .category-card__heading__title, .section-header__title {
   font-weight: 800;
 }
 
@@ -1445,6 +1445,29 @@ html:not([data-theme=dark]) .navbar__actions__link .is-dark {
   opacity: 0;
   transition: opacity 0.2s cubic-bezier(0.21, 0.01, 0.21, 0.96);
 }
+/* Sub Banner Section Style */
+.sub-banner {
+  background-color: var(--color-banner-bg);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.sub-banner__title {
+  color: var(--color-banner-text);
+  position: relative;
+  font-size: 1.875rem;
+  letter-spacing: 1px;
+}
+@media (min-width: 576px) {
+  .sub-banner__title {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .sub-banner__title {
+    font-size: 3.75rem;
+  }
+}
+
 /* Banner Section Style */
 .banner {
   --_padding-block: 1.25rem;

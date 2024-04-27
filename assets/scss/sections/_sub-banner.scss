@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+/* Sub Banner Section Style */
+.sub-banner{
+    background-color: $color-banner-bg;
+    padding-top: toRem(40);
+    padding-bottom: toRem(40);
+
+    &__title{
+        color: $color-banner-text;
+        position: relative;
+        font-size: toRem(30);
+        @include min-sm{
+            font-size: toRem(40);
+        }
+        @include min-lg{
+            font-size: toRem(60);
+        }
+        letter-spacing: 1px;
+        @extend %fw-extrabold;
+    }
+}
