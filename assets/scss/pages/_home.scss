@@ -1,0 +1,76 @@
+@use '../abstracts' as *;
+
+/* Banner Section Style */
+.banner{
+    --_padding-block: #{toRem(20)};
+    @include min-lg {
+        --_padding-block: #{toRem(40)};
+    }
+
+    @extend %overflow-hidden;
+    padding-top: var(--_padding-block);
+    padding-bottom: var(--_padding-block);
+    
+
+    &__logo{
+        max-width: toRem(162);
+        margin-bottom: toRem(16);
+
+        @include min-lg {
+            display: none;
+        }
+    }
+
+    &__title{
+        font-size: clamp(3rem, 5vw, 5rem);
+        @extend %fw-semibold;
+        
+        @include min-lg{
+            margin-top: toRem(50);
+        }
+        @include min-xl{
+            margin-top: toRem(80);
+        }
+        @include max-md {
+            margin-bottom: toRem(30);
+        }
+    }
+
+    &__content{
+        @include max-md {
+            text-align: center;
+            margin-bottom: toRem(30);
+        }
+    }
+
+    &__slider{
+        max-width: toRem(220);
+        @media (min-width: 380px) {
+            max-width: toRem(300);
+        }
+        @include min-xl{
+            max-width: toRem(400);
+        }
+
+        &.swiper-3d .swiper-slide-shadow{
+            background-color: transparent;
+        }
+    }
+
+    &__figure{
+        @extend %stacking-context;
+        @extend %overflow-hidden;
+        display: block;
+        padding-top: 130%;
+        width: 100%;
+        border-radius: toRem(32);
+        @include min-xl{
+            border-radius: toRem(48);
+        }
+
+        &__image{
+            @extend %full-width;
+            @extend %select-none;
+        }
+    }
+}

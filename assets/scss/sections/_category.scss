@@ -1,0 +1,192 @@
+@use '../abstracts' as *;
+
+/* Category Section Style */
+.category{
+    &-grid{
+        display: grid;
+        grid-auto-rows: 1fr;
+        gap: toRem(20);
+
+        @include min-sm{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include min-lg{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include min-xl{
+            grid-template-columns: repeat(10, 1fr);
+            grid-auto-rows: toRem(400);
+        }        
+        
+        &__item{
+            @include max-lg{
+                width: 100%;
+                aspect-ratio: 1;
+            }
+            @include min-xl{
+                grid-column: span 3;
+            }
+            
+            // 1,5,9
+            &:first-of-type,
+            &:nth-of-type(5)
+            {
+                @include min-xl{
+                    grid-column: span 4;
+                }
+            }
+        }
+        
+        &.has-5 .category-grid__item{
+            &:nth-of-type(3){
+                @include min-xl{
+                    grid-row: span 2;
+                }
+            }
+        }
+
+        .category-card{
+            @extend %wh-full;
+        }
+    }
+
+    &-card{
+        --_radius: 2.5rem;
+    
+        background-color: $color-card;
+        box-shadow: 0 0 toEm(20) rgba($color-black, $alpha: 0.02);
+        padding: toRem(10);
+        border: 1px solid $color-border;
+        border-radius: calc(var(--_radius) / 2);
+        @extend %overflow-hidden;
+        
+        &__body{
+            position: relative;
+            @extend %wh-full;
+        }
+
+        @at-root .categories:not(.category-grid) &{
+            margin-block-end: $gutter;
+        }
+    
+        &__figure{
+            @extend %stacking-context;
+            @extend %wh-full;
+
+            @at-root .categories:not(.category-grid) &{
+                padding-top: 100%;
+            }
+    
+            &__bg{
+                @extend %full-width;
+                border-radius: calc(var(--_radius) / 2);
+            }
+        }
+    
+        &__action{
+            --_size: 3rem;
+            @media (min-width: 768px) and (max-width: 991.98px), (min-width: 1400px){
+                --_size: 3.5rem;
+            }
+            --_gap: 10px;
+    
+            position: absolute;
+            isolation: isolate;
+            right: 0;
+            bottom: 0;
+            padding-top: var(--_gap);
+            padding-left: var(--_gap);
+            border-top-left-radius: calc(var(--_size) - (var(--_gap) * 2));
+            color: $color-card;
+            background-color: currentColor;
+    
+            &::before,
+            &::after
+            {
+                @extend %common-pseudo;
+                z-index: -1;
+                width: var(--_radius);
+                aspect-ratio: 1;
+                border-radius: 50%;
+                box-shadow: calc(var(--_radius) / 2) calc(var(--_radius) / 2) 0 currentColor;
+            }
+    
+            &::before{
+                top: 0;
+                right: 0;
+                transform: translateY(calc(var(--_radius) * -1));
+            }
+    
+            &::after{
+                bottom: 0;
+                left: 0;
+                transform: translateX(calc(var(--_radius) * -1));
+            }
+    
+            &__btn{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: var(--_size);
+                height: var(--_size);
+                color: $color-primary;
+                border: 1px solid $color-primary;
+                @extend %transition;
+                @extend %rounded-circle;
+    
+                &:active{
+                    color: $color-white;
+                    background-color: $color-primary;
+                }
+    
+                @include hover{
+                    &:hover,
+                    &:focus-visible
+                    {
+                        color: $color-white;
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }
+    
+        &__heading{
+            --_position: #{toRem(15)};
+            position: absolute;
+            background-color: $color-card;
+            padding: toRem(10) toRem(15);
+            border: 1px solid $color-border;
+            border-radius: calc(var(--_radius) / 2);
+            top: var(--_position);
+            right: var(--_position);
+            left: var(--_position);
+            display: block;
+            // box-shadow: 0 0 toEm(15) rgba($color-black, $alpha: 0.05);
+    
+            &__title{
+                @extend %uppercase;
+                @extend %fw-extrabold;
+                @extend %transition;
+    
+                font-size: toRem(20);
+                @include min-md{
+                    font-size: toRem(26);
+                }
+                line-height: 1;
+                margin-bottom: 0;
+            }
+    
+            &:active{
+                color: $color-primary;
+            }
+    
+            @include hover{
+                &:hover,
+                &:focus-visible
+                {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}

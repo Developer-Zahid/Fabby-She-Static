@@ -1,0 +1,133 @@
+@use '../abstracts' as *;
+
+/* Testimonial Section Style */
+.testimonial{
+    position: relative;
+    
+    &__slide,
+    &-card,
+    &-card__rating,
+    &-card__footer
+    {
+        display: flex;
+    }
+
+    &__slider{
+        padding-top: toRem(80);
+        @include min-xs{
+            padding-top: toRem(40);
+        }
+
+        &__arrow{
+            --_size: #{toRem(40)};
+            @include min-md{
+                --_size: #{toRem(50)};
+            }
+            --_vertical-position: 50%;
+            @include min-xs{
+                --_vertical-position: -100%;
+            }
+
+            width: var(--_size);
+            height: var(--_size);
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            @extend %rounded-circle;
+            @extend %transition;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            
+            &--prev{
+                transform: translateX(calc((var(--_size) + toRem(15)) * -1)) translateY(var(--_vertical-position));
+            }
+            
+            &--next{
+                transform: translateX(0) translateY(var(--_vertical-position));
+            }
+            
+            &:not(:disabled){
+                @extend %cursor-pointer;
+                
+                &:active{
+                    color: $color-white;
+                    background-color: $color-primary;
+                }
+                @include hover{
+                    &:hover,
+                    &:focus-visible
+                    {
+                        color: $color-white;
+                        background-color: $color-primary;
+                    }
+                }
+            }
+
+            &:disabled{
+                color: #bbbbbb;
+                border-color: currentColor;
+            }
+        }
+    }
+
+    &__slide{
+        height: auto;
+    }
+
+    &-card{
+        flex-direction: column;
+        background-color: $color-card;
+        border-radius: 8px;
+        padding: toRem(30) toRem(20);
+        margin-block-end: $gutter;
+        box-shadow: 0 5px toEm(20) rgba($color-black, $alpha: 0.05);
+
+        &__rating,
+        &__footer
+        {
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        &__rating{
+            gap: 5px;
+            font-size: toRem(18);
+            color: $color-primary;
+        }
+
+        &__text{
+            color: $color-text-muted;
+            font-size: toRem(14);
+            line-height: 1.8;
+            margin-block: toRem(20);
+        }
+
+        &__footer{
+            gap: toRem(10);
+            margin-block-start: auto;
+
+            &__figure{
+                @extend %stacking-context;
+                @extend %rounded-circle;
+                @extend %overflow-hidden;
+                width: toRem(45);
+                height: toRem(45);
+
+                &__bg{
+                    @extend %full-width;
+                }
+            }
+
+            &__text{
+                @extend %fw-semibold;
+                text-transform: capitalize;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

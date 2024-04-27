@@ -1,0 +1,94 @@
+@use '../abstracts' as *;
+
+/* Common Button's Style */
+.btn{
+    --bs-btn-active-border-color: var(--bs-btn-active-bg);
+
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    line-height: 1;
+    border: 0;
+    transition: all .2s ease-in-out;
+	box-shadow: none !important;
+    @extend %fw-medium;
+
+    font-size: toRem(18);
+    padding: toEm(18) toEm(40);
+    &-sm{
+        font-size: toRem(16);
+        padding: toEm(14) toEm(20);
+    }
+    &-icon{
+        padding: toRem(11.44) toRem(11.776);
+    }
+    &-outline{
+        color: $color-text;
+        background-color: $color-card;
+        border: 1px solid $color-input-border;
+        border-radius: 6px;
+    }
+    
+    color: var(--_btn-color, #{$color-white});
+    background-color: var(--_btn-bg, #{$color-primary});
+    &:active{
+        color: var(--_btn-hover-color, #{$color-light});
+        background-color: var(--_btn-hover-bg, #{$color-dark});
+        border-color: var(--_btn-hover-bg, #{$color-dark});
+    }
+    @include hover{
+        &:hover,
+        &:focus
+        {
+            color: var(--_btn-hover-color, #{$color-light});
+            background-color: var(--_btn-hover-bg, #{$color-dark});
+            border-color: var(--_btn-hover-bg, #{$color-dark});
+        }
+    }
+
+    &-text{
+        color: $color-primary;
+        background-color: transparent;
+        border: 0;
+        font-size: inherit;
+        font-family: inherit;
+        @extend %cursor-pointer;
+
+        &:hover,
+        &:focus
+        {
+            text-decoration: underline;
+        }
+    }
+
+    &:not(:disabled){
+        @extend %cursor-pointer;
+    }
+
+    &-primary,
+    &-danger
+    {
+        --_btn-hover-color: #{$color-light};
+        --_btn-hover-bg: #{$color-dark};
+        --bs-btn-active-bg: #{$color-primary};
+    }
+    
+    &-primary{
+        --_btn-color: #{$color-white};
+        --_btn-bg: #{$color-primary};
+    }
+
+    &-dark{
+        --_btn-color: #{$color-light};
+        --_btn-bg: #{$color-dark};
+        --_btn-hover-color: #{$color-white};
+        --_btn-hover-bg: #{$color-primary};
+        --bs-btn-active-bg: var(--_btn-hover-bg);
+    }
+
+    &-danger{
+        --_btn-color: #{$color-white};
+        --_btn-bg: #{$color-danger};
+    }
+}

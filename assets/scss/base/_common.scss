@@ -1,0 +1,338 @@
+@use '../abstracts' as *;
+
+:root{
+	color-scheme: light;
+    --color-primary: #{$scss-color-primary};
+    --color-primary-rgb: #{$scss-color-primary-rgb};
+    --color-success: #{$scss-color-success};
+    --color-success-rgb: #{$scss-color-success-rgb};
+    --color-danger: #{$scss-color-danger};
+    --color-danger-rgb: #{$scss-color-danger-rgb};
+
+    --color-body: #{$scss-color-body--light};
+    --color-body-rgb: #{$scss-color-body-rgb--light};
+    --color-text: #{$scss-color-text--light};
+    --color-text-muted: #{$scss-color-text-muted--light};
+    --color-card: #{$scss-color-card--light};
+    --color-border: #{$scss-color-border--light};
+    --color-input-border: #{$scss-color-input-border--light};
+    --color-banner-text: #{$scss-color-banner-text--light};
+    --color-banner-bg: #{$scss-color-banner-bg--light};
+    --color-disabled: #{$scss-color-disabled--light};
+    --color-light: #{$scss-color-light--light};
+    --color-dark: #{$scss-color-dark--light};
+
+    --font-primary: #{$scss-font-primary};
+    --font-secondary: #{$scss-font-secondary};
+
+    --transition-menu: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"]:root{
+	color-scheme: dark;
+	--color-body: #{$scss-color-body--dark};
+	--color-body-rgb: #{$scss-color-body-rgb--dark};
+	--color-text: #{$scss-color-text--dark};
+	--color-text-muted: #{$scss-color-text-muted--dark};
+	--color-card: #{$scss-color-card--dark};
+	--color-border: #{$scss-color-border--dark};
+	--color-input-border: #{$scss-color-input-border--dark};
+	--color-banner-text: #{$scss-color-banner-text--dark};
+	--color-banner-bg: #{$scss-color-banner-bg--dark};
+	--color-disabled: #{$scss-color-disabled--dark};
+	--color-light: #{$scss-color-light--dark};
+	--color-dark: #{$scss-color-dark--dark};
+}
+
+/* Reset CSS */
+*{
+	--_scrollbar-thumb: #{$color-primary};
+	--_scrollbar-track: #{$color-body};
+
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+
+	@-moz-document url-prefix(){
+		&{
+			scrollbar-width: thin;
+			scrollbar-color: var(--_scrollbar-thumb) var(--_scrollbar-track);
+		}
+	}
+	&::-webkit-scrollbar{
+		width: toRem(8);
+	}
+	&::-webkit-scrollbar-thumb,
+	&::-webkit-scrollbar-track
+	{
+		border-radius: 50rem;
+	}
+	&::-webkit-scrollbar-thumb{
+		background-color: var(--_scrollbar-thumb);
+	}
+	&::-webkit-scrollbar-track{
+		background-color: var(--_scrollbar-track);
+	}
+}
+
+::selection{
+	color: $color-white;
+	background: $color-primary;
+}
+
+html,
+body
+{
+	scroll-behavior: smooth;
+}
+
+html{
+	font-size: 16px;
+	text-size-adjust: none;
+	
+    &.active--menu{
+		overflow: hidden;
+    }
+}
+
+body {
+	--bs-body-bg: #{$color-body};
+	--bs-body-color: #{$color-text};
+	--bs-body-font-family: #{$font-primary};
+	transition: background-color $transition-menu;
+	@extend %fw-regular;
+
+	@at-root .active--menu{
+		--bs-body-bg: #{$color-white};
+	}
+}
+
+a,
+input,
+textarea,
+select,
+button
+{
+	color: inherit;
+	font: inherit;
+	word-wrap: anywhere;
+}
+
+a,
+a:hover,
+a:focus,
+a:active
+{
+	color: currentColor;
+	text-decoration: none;
+}
+
+button,
+button:hover,
+button:focus,
+button:active
+{
+	outline: none;
+}
+
+img,
+svg
+{
+	display: block;
+}
+
+img{
+	object-fit: cover;
+	max-width: 100%;
+}
+
+p{
+	font-family: $font-secondary;
+	font-size: toRem(14);
+	@include min-md{
+		font-size: toRem(16);
+	}
+	@include min-lg{
+		font-size: toRem(18);
+	}
+}
+
+.user-select-none{
+	pointer-events: none;
+}
+
+.list-inline{
+	font-size: 0;
+	&-item{
+		font-size: 1rem;
+	}
+}
+
+/* Common Section Gap Style */
+.section-gap{
+	--_section-gap: #{toRem(30)};
+	@include min-lg{
+		--_section-gap: #{toRem(50)};
+	}
+	@include min-xl{
+		--_section-gap: #{toRem(70)};
+	}
+	
+	padding: var(--_section-gap) 0;
+	&--fix{
+		padding-bottom: calc(var(--_section-gap) - $gutter);
+	}
+}
+
+/* Common Section Heading Style */
+.section-header{
+	&__title{
+		font-size: toRem(26);
+		@include min-md{
+			font-size: toRem(40);
+		}
+		@extend %fw-extrabold;
+		text-transform: capitalize;
+		margin-bottom: toRem(40);
+	}
+}
+.section-title {
+    font-size: 2.52rem;
+}
+
+.match-height > [class*="col"]{
+	display: flex;
+	flex-flow: column;
+}
+
+.match-height > [class*="col"] > *{
+	flex: 1 1 auto;
+}
+
+.strong{
+	font-weight: 600;
+}
+
+.text{
+	&-primary{
+		--bs-primary-rgb: #{$color-primary-rgb};
+	}
+
+	&-muted{
+		color: $color-text-muted;
+	}
+
+	&-danger{
+		color: $color-danger;
+	}
+
+	&-underline{
+		text-decoration: underline;
+	}
+}
+
+.hr{
+	height: 1px;
+	background-color: $color-border;
+}
+
+.product{
+	&-discount-text{
+		color: $color-text-muted;
+		text-decoration: line-through;
+		font-size: 75%;
+	}
+	
+	&-color-list{
+		display: flex;
+		gap: 6px;
+		flex-wrap: wrap;
+	
+		&__item{
+			display: inline-block;
+			width: toRem(32);
+			height: toRem(32);
+			border: 0;
+			border-radius: 50%;
+			background-color: var(--_variant, $color-primary);
+			cursor: pointer;
+	
+			&[class*="active"]{
+				box-shadow:
+					inset 0 0 0 3px $color-card,
+					0 0 0 2px $color-primary;
+	
+				&:focus-visible{
+					animation: ripple 0.25s $transition-ease infinite;
+				}
+			}
+	
+			@include hover{
+				&:focus-visible{
+					animation: ripple 0.25s $transition-ease forwards;
+				}
+			}
+		}
+	}
+}
+
+.toast{
+	border-radius: 10px !important;
+	box-shadow: none !important;
+
+	&-message{
+		font-size: toRem(18);
+		font-family: $font-primary;
+		@extend %fw-semibold;
+	}
+	&-close-button{
+		font-size: toRem(24);
+		text-shadow: none;
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+	&-success{
+		background-color: $color-success;
+	}
+	&-error{
+		background-color: $color-danger;
+	}
+}
+
+.avatar{
+	--_size: #{toRem(50)};
+	width: var(--_size);
+	height: var(--_size);
+	@extend %stacking-context;
+	@extend %rounded-circle;
+	@extend %overflow-hidden;
+	border: 1px solid $color-border;
+
+	&__bg{
+		@extend %full-width;
+	}
+}
+
+.gap{
+	gap: calc($gutter / 2);
+}
+
+.skeleton{
+	background-image: linear-gradient(110deg, $color-input-border 8%, $color-border 18%, $color-input-border 33%);
+	background-size: 200% 100%;
+	border-radius: 6px;
+	opacity: 0.7;
+	animation: skeleton 2s linear infinite;
+	
+	@keyframes skeleton {
+		0%{
+			background-position-x: 200%;
+		}
+		100%{
+			background-position-x: -200%;
+		}
+	}
+}

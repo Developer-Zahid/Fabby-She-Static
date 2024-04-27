@@ -1,0 +1,134 @@
+@use '../abstracts' as *;
+
+/* Instagram Section Style */
+.instagram{
+    &__slider{
+        padding-block: toRem(40);
+        @include min-md{
+            padding-block: toRem(50);
+        }
+        display: flex;
+
+        @include motion{
+            overflow: hidden;
+        }
+        @include no-motion{
+            overflow: auto;
+        }
+
+        &__row{
+            --_card-size: #{toRem(200)};
+            @include min-md{
+                --_card-size: #{toRem(250)};
+            }
+            @include min-xxl{
+                --_card-size: #{toRem(325)};
+            }
+
+            flex-shrink: 0;
+            display: grid;
+            grid-auto-columns: minmax(var(--_card-size), 1fr);
+            grid-auto-flow: column;
+
+            @include motion{
+                animation: instagramMarquee var(--_marquee-speed, 10s) linear infinite;
+
+                @keyframes instagramMarquee {
+                    from {
+                        transform: translateX(0);
+                    }
+                    to {
+                        transform: translateX(calc(-100% ));
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__slide{
+        @extend %stacking-context;
+        display: block;
+        margin-inline-start: toRem(-20);
+        position: relative;
+
+        &:nth-of-type(even) .instagram__figure{
+            transform: rotate(9deg) translateY(toRem(-10));
+        }
+        &:nth-of-type(3n + 1) .instagram__figure{
+            transform: rotate(-5deg) translateY(toRem(10));
+        }
+
+        &__icon{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: toRem(50);
+            color: $color-white;
+            transition: transform .2s $transition-ease;
+        }
+
+        &:active{
+            .instagram{
+                &__figure::after{
+                    opacity: 1;
+                }
+                &__slide__icon{
+                    transform: translate(-50%, -50%) scale(1)
+                }
+            }
+        }
+
+        @include hover{
+            &:hover,
+            &:focus-visible
+            {
+                .instagram{
+                    &__figure::after{
+                        opacity: 1;
+                    }
+                    &__slide__icon{
+                        transform: translate(-50%, -50%) scale(1)
+                    }
+                }
+            }
+        }
+    }
+
+    &__figure{
+        @extend %stacking-context;
+        padding-block-start: 116%;
+        box-shadow: 0 0 toRem(20) rgba($color-black, $alpha: 0.1);
+        border-radius: toRem(16);
+        color: $color-card;
+        background-color: currentColor;
+        border: solid currentColor;
+
+        border-width: 2px;
+        @include min-md{
+            border-width: 3px;
+        }
+        @include min-xxl{
+            border-width: 5px;
+        }
+        
+        &::after,
+        &__bg
+        {
+            @extend %full-width;
+            border-radius: inherit;
+        }
+        
+        &::after{
+            content: '';
+            background-image: linear-gradient(to top, rgba($color-black, $alpha: 0.7), transparent);
+            opacity: 0;
+            transition: opacity .2s $transition-ease;
+        }
+
+        &__bg{
+            @extend %overflow-hidden;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@use './function' as *;
+
+// SCSS Variable's
+$scss-font-primary: 'Cabinet Grotesk', sans-serif;
+$scss-font-secondary: 'Poppins', sans-serif;
+$scss-color-primary:#ea5949;
+$scss-color-primary-rgb: toRGB($scss-color-primary);
+$scss-color-success:#249524;
+$scss-color-success-rgb: toRGB($scss-color-success);
+$scss-color-danger:#e73d3e;
+$scss-color-danger-rgb: toRGB($scss-color-danger);
+
+$scss-color-body--light: #fff6f1;
+$scss-color-body-rgb--light: toRGB($scss-color-body--light);
+$scss-color-body--dark: #0d111d;
+$scss-color-body-rgb--dark: toRGB($scss-color-body--dark);
+
+$scss-color-text--light: #000000;
+$scss-color-text--dark: #ffffff;
+
+$scss-color-text-muted--light: #565656;
+$scss-color-text-muted--dark: #b9bcc4;
+
+$scss-color-card--light: #ffffff;
+$scss-color-card--dark: #171b26;
+
+$scss-color-border--light: #eeeeee;
+$scss-color-border--dark: #292d38;
+
+$scss-color-input-border--light: #dcdcdc;
+$scss-color-input-border--dark: #363a46;
+
+$scss-color-banner-text--light: #fff6f1;
+$scss-color-banner-text--dark: #ffffff;
+
+$scss-color-banner-bg--light: #222222;
+$scss-color-banner-bg--dark: #333742;
+
+$scss-color-light--light: #ffffff;
+$scss-color-light--dark: #000000;
+
+$scss-color-dark--light: #000000;
+$scss-color-dark--dark: #ffffff;
+
+$scss-color-disabled--light: #f2f2f2;
+$scss-color-disabled--dark: #000000;
+
+$color-black:#000000;
+$color-white:#ffffff;
+$color-gray:#565656;
+
+$font-primary: var(--font-primary);
+$font-secondary: var(--font-secondary);
+$color-primary: var(--color-primary);
+$color-primary-rgb: var(--color-primary-rgb);
+$color-success: var(--color-success);
+$color-success-rgb: var(--color-success-rgb);
+$color-danger: var(--color-danger);
+$color-danger-rgb: var(--color-danger-rgb);
+$color-body: var(--color-body);
+$color-body-rgb: var(--color-body-rgb);
+$color-text: var(--color-text);
+$color-text-muted: var(--color-text-muted);
+$color-card: var(--color-card);
+$color-border: var(--color-border);
+$color-input-border: var(--color-input-border);
+$color-banner-text: var(--color-banner-text);
+$color-banner-bg: var(--color-banner-bg);
+$color-disabled: var(--color-disabled);
+$color-light: var(--color-light);
+$color-dark: var(--color-dark);
+
+$gutter: 24px;
+$sidebar-size: toRem(260);
+$sidebar-width: var(--sidebar-width, auto);
+
+$transition-menu: var(--transition-menu);
+$transition-ease: cubic-bezier(.21,.01,.21,.96);
+$transition-ease--bounce: cubic-bezier(0.34, 1.56, 0.64, 1);

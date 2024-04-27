@@ -1,0 +1,113 @@
+@use '../abstracts' as *;
+
+/* Footer Section Style */
+.footer{
+    &__container{
+        --_radius: #{toRem(30)};
+        padding-top: toRem(30);
+        padding-bottom: toRem(30);
+        @include min-md{
+            padding-left: toRem(30);
+            padding-right: toRem(30);
+            padding-top: toRem(40);
+            padding-bottom: toRem(40);
+        }
+        border-top-left-radius: var(--_radius);
+        border-top-right-radius: var(--_radius);
+        background-color: $color-card;
+    }
+
+    &__logo{
+        display: inline-block;
+        max-width: toRem(160);
+
+        @include hover{
+            &:hover,
+            &:focus-visible
+            {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__nav,
+    &__social,
+    .hr,
+    &__copyright
+    {
+        margin-block-start: toRem(30);
+    }
+
+    &__nav,
+    &__social,
+    &__payments
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: toRem(15);
+    }
+
+    &__nav{
+        &__link{
+            font-size: toRem(18);
+            @extend %fw-medium;
+            @extend %transition;
+
+            &:active{
+                color: $color-primary;
+            }
+            @include hover{
+                &:hover,
+                &:focus-visible
+                {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__social{
+        &__icon{
+            @extend %rounded-circle;
+            @extend %transition;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: toRem(40);
+            height: toRem(40);
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            font-size: toRem(17);
+
+            &:active{
+                color: $color-white;
+                background-color: $color-primary;
+            }
+            @include hover{
+                &:hover,
+                &:focus-visible
+                {
+                    color: $color-white;
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__payments{
+        margin-block-start: toRem(10);
+
+        &__image{
+            @include dark-mode{
+                filter: invert(1);
+            }
+        }
+    }
+
+    &__copyright{
+        color: $color-text-muted;
+        font-size: toRem(14);
+    }
+}

@@ -1,0 +1,142 @@
+@use '../abstracts' as *;
+
+/* Product Section Style */
+.product-card{
+    --_radius: 2.5rem;
+    background-color: $color-card;
+    box-shadow: 0 0 toEm(20) rgba($color-black, $alpha: 0.02);
+    padding: toRem(12);
+    margin-block-end: $gutter;
+    border: 1px solid $color-border;
+    border-radius: calc(var(--_radius) / 2);
+    @extend %overflow-hidden;
+
+    &__head{
+        position: relative;
+
+        &__figure{
+            @extend %stacking-context;
+            padding-top: 110%;
+
+            &__bg{
+                @extend %full-width;
+                @extend %transition;
+                border-radius: calc(var(--_radius) / 2);
+
+                &:not(.active){
+                    opacity: 0;
+                }
+            }
+        }
+
+        &__action{
+            --_size: 3rem;
+            @media (min-width: 768px) and (max-width: 991.98px), (min-width: 1400px){
+                --_size: 3.5rem;
+            }
+            --_gap: 10px;
+
+            position: absolute;
+            isolation: isolate;
+            right: 0;
+            bottom: 0;
+            padding-top: var(--_gap);
+            padding-left: var(--_gap);
+            border-top-left-radius: calc(var(--_size) - (var(--_gap) * 2));
+            color: $color-card;
+            background-color: currentColor;
+
+            &::before,
+            &::after
+            {
+                @extend %common-pseudo;
+                z-index: -1;
+                width: var(--_radius);
+                height: var(--_radius);
+                border-radius: 50%;
+                box-shadow: calc(var(--_radius) / 2) calc(var(--_radius) / 2) 0 currentColor;
+            }
+
+            &::before{
+                top: 0;
+                right: 0;
+                transform: translateY(calc(var(--_radius) * -1));
+            }
+
+            &::after{
+                bottom: 0;
+                left: 0;
+                transform: translateX(calc(var(--_radius) * -1));
+            }
+
+            &__btn{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: var(--_size);
+                height: var(--_size);
+                color: $color-primary;
+                font-size: toRem(18);
+                background-color: transparent;
+                border: 1px solid $color-primary;
+                @extend %transition;
+                @extend %rounded-circle;
+                
+                &:not([disabled]){
+                    @extend %cursor-pointer;
+
+                    &:active{
+                        color: $color-white;
+                        background-color: $color-primary;
+                        animation: ripple 0.25s $transition-ease forwards;
+                    }
+                    @include hover{
+                        &:hover,
+                        &:focus-visible
+                        {
+                            color: $color-white;
+                            background-color: $color-primary;
+                        }
+                    }
+                }
+
+                &[disabled]{
+                    color: $color-white;
+                    background-color: $color-danger;
+                    border-color: $color-danger;
+                }
+            }
+        }
+    }
+
+    &__body{
+        padding-block-start: toRem(20);
+        padding-block-end: 5px;
+        padding-inline: toRem(10);
+
+        &__title{
+            font-size: toRem(24);
+            margin-block: toRem(10);
+
+            &__link{
+                word-wrap: anywhere;
+                
+                &:hover,
+                &:focus-visible
+                {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+
+    @keyframes ripple {
+        0%{
+            box-shadow: 0 0 0 rgba($color-primary-rgb, 0.8);
+        }
+        100%{
+            box-shadow: 0 0 0 toRem(10) transparent;
+        }
+    }
+}
