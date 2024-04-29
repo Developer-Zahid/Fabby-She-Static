@@ -62,7 +62,7 @@
 				</button>
 				<div class="navbar__nav" data-target="menu">
 					<a href="./" class="navbar__nav__link">Home</a>
-					<a href="./shop.html" class="navbar__nav__link active" aria-current="page">Shop</a>
+					<a href="./shop.html" class="navbar__nav__link">Shop</a>
 					<a href="./category.html" class="navbar__nav__link">Category</a>
 				</div>
 				<svg class="navbar__logo__image navbar__hidden" area-hidden="true" width="100%" height="100%" viewBox="0 0 200 102" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +113,7 @@
 							<path d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z" fill="currentColor"></path>
 						</svg>
 					</a>
-					<a href="./cart.html" class="navbar__actions__link" aria-label="Total products in your cart">
+					<a href="./cart.html" class="navbar__actions__link active" aria-current="page" aria-label="Total products in your cart">
 						<span class="navbar__actions__link__count">0</span>
 						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
 							<path d="M22.713 4.077A2.993 2.993 0 0 0 20.41 3H4.242L4.2 2.649A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.82-2h11.92a5 5 0 0 0 4.921-4.113l.785-4.354a2.994 2.994 0 0 0-.65-2.456ZM21.4 6.178l-.786 4.354A3 3 0 0 1 17.657 13H5.419l-.941-8H20.41a1 1 0 0 1 .99 1.178Z" fill="currentColor"></path>
@@ -134,156 +134,120 @@
 	<!-- Sub Banner Section -->
 	<section class="sub-banner">
         <div class="container">
-            <h1 class="sub-banner__title text-center mb-0">Our All Products</h1>
+            <h1 class="sub-banner__title text-center mb-0">Cart Items</h1>
         </div>
     </section>
 
-	<!-- Product Section -->
-	<section class="section-gap">
-        <div class="container">
-			<div class="row match-height">
-				<div class="col-xl-3 col-lg-4 col-md-6">
-					<article class="product-card">
-						<div class="product-card__head">
-							<figure class="product-card__head__figure">
-								<img data-target="product-variant" data-variant="1" class="product-card__head__figure__bg active" src="./assets/images/products/product-2.jpg" alt="Product preview" loading="lazy">
-								<img data-target="product-variant" data-variant="2" class="product-card__head__figure__bg" src="./assets/images/products/banner-product-2.jpg" alt="Product preview" loading="lazy">
+	<!-- Cart Section -->
+	<section class="cart section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="cart__header pb-4">
+						<h1 class="cart__header__title">Your Cart</h1>
+						<h2 class="cart__header__sub-title">1 item</h2>
+					</div>
+					<div class="cart__list">
+						<div class="cart__item">
+							<figure class="cart__item__figure">
+								<img class="cart__item__figure__bg" src="./assets/images/products/product-1.jpg" alt="Product preview">
 							</figure>
-							<div class="product-card__head__action">
-								<button type="button" aria-label="Add to cart" class="product-card__head__action__btn" data-cart="add">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-										<circle cx="7" cy="22" r="2" fill="currentColor"></circle>
-										<circle cx="17" cy="22" r="2" fill="currentColor"></circle>
-										<path d="M23 3h-2V1a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0V5h2a1 1 0 0 0 0-2Z" fill="currentColor"></path>
-										<path d="M21.771 9.726a.994.994 0 0 0-1.162.806A3 3 0 0 1 17.657 13H5.418l-.94-8H13a1 1 0 0 0 0-2H4.242L4.2 2.648A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.829-2h11.929a5 5 0 0 0 4.921-4.112 1 1 0 0 0-.807-1.162Z" fill="currentColor"></path>
+							<div class="cart__item__body">
+								<a href="#!" class="cart__item__title">Product title</a>
+								<p class="cart__item__text mt-1">৳ 100 x 2</p>
+								<div class="d-flex align-items-center my-2"><span class="cart__item__text pe-2">Color:</span><span class="product-color-list__item " style="--_variant: #9b8a82;"></span></div>
+								<div class="cart__item__body__footer">
+									<div class="spinner">
+										<button type="button" aria-label="Decrease" class="spinner__btn spinner__btn--decrease" onClick={handleDecreaseClick}>
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
+												<path d="M480 288H32c-17.673 0-32-14.327-32-32s14.327-32 32-32h448c17.673 0 32 14.327 32 32s-14.327 32-32 32z" fill="currentColor"></path>
+											</svg>
+										</button>
+										<input type="number" class="spinner__input" value="1" min="1" max="10" />
+										<button type="button" aria-label="Increase" class="spinner__btn spinner__btn--increase" onClick={handleIncreaseClick}>
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
+												<path d="M480 224H288V32c0-17.673-14.327-32-32-32s-32 14.327-32 32v192H32c-17.673 0-32 14.327-32 32s14.327 32 32 32h192v192c0 17.673 14.327 32 32 32s32-14.327 32-32V288h192c17.673 0 32-14.327 32-32s-14.327-32-32-32z" fill="currentColor"></path>
+											</svg>
+										</button>
+									</div>
+									<p class="cart__item__text"><strong>৳ 200</strong></p>
+								</div>
+								<button type="button" class="cart__item__btn">
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
+										<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
 									</svg>
 								</button>
 							</div>
 						</div>
-						<div class="product-card__body">
-							<h2 class="text-primary fw-semibold">৳ 100 <small class="product-discount-text">৳ 120</small></h2>
-							<h3 class="product-card__body__title fw-semibold">
-								<a href="#!" class="product-card__body__title__link">Product Title</a>
-							</h3>
-							<div class="product-color-list mb-3">
-								<button type="button" aria-label="Color variant" class="product-color-list__item active" data-toggle="product-variant" data-variant="1" style="--_variant: #6f3119;"></button>
-								<button type="button" aria-label="Color variant" class="product-color-list__item" data-toggle="product-variant" data-variant="2" style="--_variant: red;"></button>
+						<div class="cart__item">
+							<figure class="cart__item__figure">
+								<img class="cart__item__figure__bg" src="./assets/images/products/product-2.jpg" alt="Product preview">
+							</figure>
+							<div class="cart__item__body">
+								<a href="#!" class="cart__item__title">Product title</a>
+								<p class="cart__item__text mt-1">৳ 200 x 3</p>
+								<div class="d-flex align-items-center my-2"><span class="cart__item__text pe-2">Color:</span><span class="product-color-list__item " style="--_variant: #76321b;"></span></div>
+								<div class="cart__item__body__footer">
+									<div class="spinner">
+										<button type="button" aria-label="Decrease" class="spinner__btn spinner__btn--decrease" onClick={handleDecreaseClick}>
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
+												<path d="M480 288H32c-17.673 0-32-14.327-32-32s14.327-32 32-32h448c17.673 0 32 14.327 32 32s-14.327 32-32 32z" fill="currentColor"></path>
+											</svg>
+										</button>
+										<input type="number" class="spinner__input" value="1" min="1" max="10" />
+										<button type="button" aria-label="Increase" class="spinner__btn spinner__btn--increase" onClick={handleIncreaseClick}>
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
+												<path d="M480 224H288V32c0-17.673-14.327-32-32-32s-32 14.327-32 32v192H32c-17.673 0-32 14.327-32 32s14.327 32 32 32h192v192c0 17.673 14.327 32 32 32s32-14.327 32-32V288h192c17.673 0 32-14.327 32-32s-14.327-32-32-32z" fill="currentColor"></path>
+											</svg>
+										</button>
+									</div>
+									<p class="cart__item__text"><strong>৳ 600</strong></p>
+								</div>
+								<button type="button" class="cart__item__btn">
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
+										<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
+									</svg>
+								</button>
 							</div>
-							<a href="#!" class="btn btn-sm btn-primary w-100 rounded-pill">
-								Buy Now
-								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-									<path d="M6.079 22.5a1.5 1.5 0 0 1 .44-1.06l7.672-7.672a2.5 2.5 0 0 0 0-3.536L6.529 2.565A1.5 1.5 0 0 1 8.65.444l7.662 7.661a5.506 5.506 0 0 1 0 7.779L8.64 23.556A1.5 1.5 0 0 1 6.079 22.5Z" fill="currentColor"></path>
-								</svg>
-							</a>
 						</div>
-					</article>
+
+						<div class="cart__empty text-center">
+							<span class="cart__empty__icon">
+								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+									<path fill="currentColor" d="M19 11.5A5.51 5.51 0 0 1 13.5 6H6.35l1.06 8.97 12.89-1a1 1 0 0 0 .91-.87l.29-2.21c-.75.38-1.6.61-2.5.61z"></path>
+									<path fill="#222222" d="M20 17.25H8.43l-.19-1.58 12.11-.95c.82-.07 1.49-.7 1.6-1.52l.14-1.1a.753.753 0 0 0-.65-.84.748.748 0 0 0-.84.65l-.14 1.1a.23.23 0 0 1-.23.21l-12.17.96-.87-7.42h4.8c.41 0 .75-.34.75-.75s-.34-.75-.75-.75H7.01L6.9 4.3a2.766 2.766 0 0 0-2.06-2.35l-2.66-.67c-.4-.1-.81.14-.91.55-.1.4.14.81.55.91l2.66.67c.5.12.88.55.94 1.07l1.53 13c-.99.41-1.7 1.4-1.7 2.54 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75c0-.45-.12-.87-.31-1.25h7.13c-.19.38-.31.8-.31 1.25 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75-1.23-2.75-2.75-2.75zM9.25 20a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM20 21.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM15.97 7.97 17.94 6l-1.97-1.97c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0L19 4.94l1.97-1.97c.29-.29.77-.29 1.06 0s.29.77 0 1.06L20.06 6l1.97 1.97c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22L19 7.06l-1.97 1.97c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06z"></path>
+								</svg>
+							</span>
+							<h3 class="cart__empty__title">Your Cart is Empty</h3>
+							<p class="cart__empty__text">Nothing in Your Basket. Time to Browse and Shop</p>
+							<a href="./shop.html" class="btn btn-primary rounded">Start Shopping</a>
+						</div>
+					</div>
 				</div>
-				<div class="col-xl-3 col-lg-4 col-md-6">
-					<article class="product-card">
-						<div class="product-card__head">
-							<figure class="product-card__head__figure">
-								<img data-target="product-variant" data-variant="1" class="product-card__head__figure__bg active" src="./assets/images/products/banner-product-2.jpg" alt="Product preview" loading="lazy">
-								<img data-target="product-variant" data-variant="2" class="product-card__head__figure__bg" src="./assets/images/products/banner-product-3.jpg" alt="Product preview" loading="lazy">
-							</figure>
-							<div class="product-card__head__action">
-								<button type="button" class="product-card__head__action__btn" title="Out of Stock" disabled="true" tabindex="-1">
-									<svg width="1.1em" height="1.1em" viewBox="0 0 437 454" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M247.814 174.26C272.76 174.26 297.325 185.143 318.305 205.196C319.618 206.346 320.684 207.749 321.441 209.321C322.197 210.893 322.628 212.601 322.708 214.344C322.788 216.087 322.514 217.828 321.904 219.462C321.294 221.097 320.36 222.591 319.159 223.856C317.955 225.119 316.508 226.125 314.905 226.813C313.302 227.502 311.577 227.858 309.832 227.861C308.088 227.863 306.361 227.512 304.755 226.829C303.15 226.145 301.7 225.144 300.493 223.884C283.37 207.483 265.382 200.059 247.814 200.059C230.27 200.059 212.316 207.478 195.192 223.884C193.965 225.09 192.509 226.036 190.909 226.668C189.309 227.299 187.599 227.602 185.879 227.559C174.325 227.263 168.932 213.081 177.414 205.191C198.361 185.143 222.897 174.26 247.814 174.26ZM301.563 123.35C306.524 123.35 311.281 125.321 314.789 128.829C318.297 132.337 320.268 137.094 320.268 142.055C320.268 147.016 318.297 151.774 314.789 155.282C311.281 158.79 306.524 160.76 301.563 160.76C299.11 160.759 296.682 160.274 294.417 159.334C292.151 158.394 290.093 157.017 288.36 155.282C286.627 153.547 285.252 151.487 284.315 149.22C283.378 146.954 282.896 144.525 282.898 142.072C282.894 139.617 283.374 137.186 284.31 134.916C285.246 132.647 286.62 130.584 288.353 128.846C290.086 127.107 292.145 125.727 294.411 124.784C296.678 123.841 299.108 123.354 301.563 123.35ZM194.128 123.35C199.085 123.361 203.835 125.339 207.335 128.849C210.835 132.359 212.798 137.115 212.793 142.072C212.793 147.027 210.825 151.779 207.322 155.283C203.818 158.786 199.066 160.755 194.111 160.755C189.156 160.755 184.404 158.786 180.901 155.283C177.397 151.779 175.429 147.027 175.429 142.072C175.427 139.615 175.91 137.182 176.849 134.911C177.788 132.641 179.165 130.577 180.901 128.839C182.637 127.1 184.699 125.721 186.969 124.779C189.238 123.837 191.671 123.352 194.128 123.35ZM21.2372 0.976562C-3.91909 1.68767 -7.91839 39.6326 16.4357 46.2487L48.1911 57.4615L85.5557 252.278C90.0329 275.591 97.4341 296.691 107.777 314.844C122.977 341.576 149.379 361.305 181.943 361.305H343.655C372.845 361.834 372.845 315.134 343.655 315.675H181.948C158.925 312.739 149.379 301.139 140.937 284.135H354.396C373.971 284.135 384.905 266.75 389.741 246.64L436.429 87.8061C438.921 61.6941 425.086 56.5399 400.874 56.5399L94.2199 56.7732L85.9767 31.5828C83.7524 24.0848 78.0635 18.2935 70.9296 16.2797L21.2372 0.976562ZM192.973 384.567C183.788 384.567 174.979 388.216 168.483 394.711C161.988 401.206 158.339 410.015 158.339 419.201C158.339 428.386 161.988 437.196 168.483 443.691C174.979 450.186 183.788 453.835 192.973 453.835C212.082 453.835 227.55 438.321 227.55 419.19C227.553 414.646 226.661 410.146 224.925 405.947C223.189 401.748 220.643 397.932 217.432 394.717C214.222 391.502 210.409 388.951 206.212 387.209C202.016 385.468 197.517 384.57 192.973 384.567ZM330.861 384.567C321.686 384.578 312.89 388.23 306.407 394.722C299.923 401.214 296.282 410.014 296.284 419.19C296.284 438.321 311.786 453.835 330.861 453.835C340.046 453.835 348.855 450.186 355.351 443.691C361.846 437.196 365.495 428.386 365.495 419.201C365.495 410.015 361.846 401.206 355.351 394.711C348.855 388.216 340.046 384.567 330.861 384.567Z" fill="currentColor"/>
-									</svg>
-								</button>
-							</div>
+				<div class="col-lg-4 mt-4 mt-lg-0">
+					<div class="cart__header pb-4">
+						<h1 class="cart__header__title">Order Summary</h1>
+					</div>
+					<div class="cart__body">
+						<div key={index} class="cart__header pb-2">
+							<span>৳ 100 x 2</span>
+							<strong>(+) ৳ 200</strong>
 						</div>
-						<div class="product-card__body">
-							<h2 class="text-primary fw-semibold">৳ 200</h2>
-							<h3 class="product-card__body__title fw-semibold">
-								<a href="#!" class="product-card__body__title__link">Product Title</a>
-							</h3>
-							<div class="product-color-list mb-3">
-								<button type="button" aria-label="Color variant" class="product-color-list__item active" data-toggle="product-variant" data-variant="1" style="--_variant: red;"></button>
-								<button type="button" aria-label="Color variant" class="product-color-list__item" data-toggle="product-variant" data-variant="2" style="--_variant: pink;"></button>
-							</div>
-							<a href="#!" class="btn btn-sm btn-primary w-100 rounded-pill">
-								Buy Now
-								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-									<path d="M6.079 22.5a1.5 1.5 0 0 1 .44-1.06l7.672-7.672a2.5 2.5 0 0 0 0-3.536L6.529 2.565A1.5 1.5 0 0 1 8.65.444l7.662 7.661a5.506 5.506 0 0 1 0 7.779L8.64 23.556A1.5 1.5 0 0 1 6.079 22.5Z" fill="currentColor"></path>
-								</svg>
-							</a>
+						<div key={index} class="cart__header pb-2">
+							<span>৳ 200 x 3</span>
+							<strong>(+) ৳ 600</strong>
 						</div>
-					</article>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-md-6">
-					<article class="product-card">
-						<div class="product-card__head">
-							<figure class="product-card__head__figure">
-								<img data-target="product-variant" data-variant="1" class="product-card__head__figure__bg active" src="./assets/images/products/product-1.jpg" alt="Product preview" loading="lazy">
-							</figure>
-							<div class="product-card__head__action">
-								<button type="button" aria-label="Add to cart" class="product-card__head__action__btn" data-cart="add">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-										<circle cx="7" cy="22" r="2" fill="currentColor"></circle>
-										<circle cx="17" cy="22" r="2" fill="currentColor"></circle>
-										<path d="M23 3h-2V1a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0V5h2a1 1 0 0 0 0-2Z" fill="currentColor"></path>
-										<path d="M21.771 9.726a.994.994 0 0 0-1.162.806A3 3 0 0 1 17.657 13H5.418l-.94-8H13a1 1 0 0 0 0-2H4.242L4.2 2.648A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.829-2h11.929a5 5 0 0 0 4.921-4.112 1 1 0 0 0-.807-1.162Z" fill="currentColor"></path>
-									</svg>
-								</button>
-							</div>
+						<div class="hr mb-2"></div>
+						<div class="cart__header">
+							<h2 class="cart__header__title">Total</h2>
+							<h2 class="cart__header__title">৳ 800</h2>
 						</div>
-						<div class="product-card__body">
-							<h2 class="text-primary fw-semibold">৳ 200 <small class="product-discount-text">৳ 250</small></h2>
-							<h3 class="product-card__body__title fw-semibold">
-								<a href="#!" class="product-card__body__title__link">Product Title</a>
-							</h3>
-							<div class="product-color-list mb-3">
-								<button type="button" aria-label="Color variant" class="product-color-list__item active" data-toggle="product-variant" data-variant="1" style="--_variant: #978d8b;"></button>
-							</div>
-							<a href="#!" class="btn btn-sm btn-primary w-100 rounded-pill">
-								Buy Now
-								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-									<path d="M6.079 22.5a1.5 1.5 0 0 1 .44-1.06l7.672-7.672a2.5 2.5 0 0 0 0-3.536L6.529 2.565A1.5 1.5 0 0 1 8.65.444l7.662 7.661a5.506 5.506 0 0 1 0 7.779L8.64 23.556A1.5 1.5 0 0 1 6.079 22.5Z" fill="currentColor"></path>
-								</svg>
-							</a>
-						</div>
-					</article>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-md-6">
-					<article class="product-card">
-						<div class="product-card__head">
-							<figure class="product-card__head__figure">
-								<img data-target="product-variant" data-variant="1" class="product-card__head__figure__bg active" src="./assets/images/products/banner-product-3.jpg" alt="Product preview" loading="lazy">
-							</figure>
-							<div class="product-card__head__action">
-								<button type="button" class="product-card__head__action__btn" title="Out of Stock" disabled="true" tabindex="-1">
-									<svg width="1.1em" height="1.1em" viewBox="0 0 437 454" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M247.814 174.26C272.76 174.26 297.325 185.143 318.305 205.196C319.618 206.346 320.684 207.749 321.441 209.321C322.197 210.893 322.628 212.601 322.708 214.344C322.788 216.087 322.514 217.828 321.904 219.462C321.294 221.097 320.36 222.591 319.159 223.856C317.955 225.119 316.508 226.125 314.905 226.813C313.302 227.502 311.577 227.858 309.832 227.861C308.088 227.863 306.361 227.512 304.755 226.829C303.15 226.145 301.7 225.144 300.493 223.884C283.37 207.483 265.382 200.059 247.814 200.059C230.27 200.059 212.316 207.478 195.192 223.884C193.965 225.09 192.509 226.036 190.909 226.668C189.309 227.299 187.599 227.602 185.879 227.559C174.325 227.263 168.932 213.081 177.414 205.191C198.361 185.143 222.897 174.26 247.814 174.26ZM301.563 123.35C306.524 123.35 311.281 125.321 314.789 128.829C318.297 132.337 320.268 137.094 320.268 142.055C320.268 147.016 318.297 151.774 314.789 155.282C311.281 158.79 306.524 160.76 301.563 160.76C299.11 160.759 296.682 160.274 294.417 159.334C292.151 158.394 290.093 157.017 288.36 155.282C286.627 153.547 285.252 151.487 284.315 149.22C283.378 146.954 282.896 144.525 282.898 142.072C282.894 139.617 283.374 137.186 284.31 134.916C285.246 132.647 286.62 130.584 288.353 128.846C290.086 127.107 292.145 125.727 294.411 124.784C296.678 123.841 299.108 123.354 301.563 123.35ZM194.128 123.35C199.085 123.361 203.835 125.339 207.335 128.849C210.835 132.359 212.798 137.115 212.793 142.072C212.793 147.027 210.825 151.779 207.322 155.283C203.818 158.786 199.066 160.755 194.111 160.755C189.156 160.755 184.404 158.786 180.901 155.283C177.397 151.779 175.429 147.027 175.429 142.072C175.427 139.615 175.91 137.182 176.849 134.911C177.788 132.641 179.165 130.577 180.901 128.839C182.637 127.1 184.699 125.721 186.969 124.779C189.238 123.837 191.671 123.352 194.128 123.35ZM21.2372 0.976562C-3.91909 1.68767 -7.91839 39.6326 16.4357 46.2487L48.1911 57.4615L85.5557 252.278C90.0329 275.591 97.4341 296.691 107.777 314.844C122.977 341.576 149.379 361.305 181.943 361.305H343.655C372.845 361.834 372.845 315.134 343.655 315.675H181.948C158.925 312.739 149.379 301.139 140.937 284.135H354.396C373.971 284.135 384.905 266.75 389.741 246.64L436.429 87.8061C438.921 61.6941 425.086 56.5399 400.874 56.5399L94.2199 56.7732L85.9767 31.5828C83.7524 24.0848 78.0635 18.2935 70.9296 16.2797L21.2372 0.976562ZM192.973 384.567C183.788 384.567 174.979 388.216 168.483 394.711C161.988 401.206 158.339 410.015 158.339 419.201C158.339 428.386 161.988 437.196 168.483 443.691C174.979 450.186 183.788 453.835 192.973 453.835C212.082 453.835 227.55 438.321 227.55 419.19C227.553 414.646 226.661 410.146 224.925 405.947C223.189 401.748 220.643 397.932 217.432 394.717C214.222 391.502 210.409 388.951 206.212 387.209C202.016 385.468 197.517 384.57 192.973 384.567ZM330.861 384.567C321.686 384.578 312.89 388.23 306.407 394.722C299.923 401.214 296.282 410.014 296.284 419.19C296.284 438.321 311.786 453.835 330.861 453.835C340.046 453.835 348.855 450.186 355.351 443.691C361.846 437.196 365.495 428.386 365.495 419.201C365.495 410.015 361.846 401.206 355.351 394.711C348.855 388.216 340.046 384.567 330.861 384.567Z" fill="currentColor"/>
-									</svg>
-								</button>
-							</div>
-						</div>
-						<div class="product-card__body">
-							<h2 class="text-primary fw-semibold">৳ 150</h2>
-							<h3 class="product-card__body__title fw-semibold">
-								<a href="#!" class="product-card__body__title__link">Product Title</a>
-							</h3>
-							<div class="product-color-list mb-3">
-								<button type="button" aria-label="Color variant" class="product-color-list__item active" data-toggle="product-variant" data-variant="1" style="--_variant: pink;"></button>
-							</div>
-							<a href="#!" class="btn btn-sm btn-primary w-100 rounded-pill">
-								Buy Now
-								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-									<path d="M6.079 22.5a1.5 1.5 0 0 1 .44-1.06l7.672-7.672a2.5 2.5 0 0 0 0-3.536L6.529 2.565A1.5 1.5 0 0 1 8.65.444l7.662 7.661a5.506 5.506 0 0 1 0 7.779L8.64 23.556A1.5 1.5 0 0 1 6.079 22.5Z" fill="currentColor"></path>
-								</svg>
-							</a>
-						</div>
-					</article>
+						<a href="./login.html" class="btn btn-dark text-center w-100 rounded mt-4">Proceed To Checkout</a>
+					</div>
 				</div>
 			</div>
-			<div class="text-center pt-5">
-                <button type="button" class="btn btn-primary rounded">
-					Load More
-				</button>
-            </div>
 		</div>
-    </section>
+	</section>
 
 	<!-- Footer Section -->
 	<footer class="footer">
@@ -344,16 +308,6 @@
 	<!-- Page Scripts -->
 	<script>
 		$(document).ready(function () {
-			// Product variant toggle function
-			$('[data-toggle="product-variant"]').on('click', function(){
-				const $currentElementParent = $(this).closest('.product-card')
-				const $currentVariendNumber = $(this).data('variant')
-				$(this).siblings().removeClass('active')
-				$currentElementParent.find('[data-target="product-variant"]').removeClass('active')
-				$(this).addClass('active')
-				$currentElementParent.find(`[data-target="product-variant"][data-variant="${$currentVariendNumber}"]`).addClass('active')
-			})
-
 			// Add cart function
 			$('[data-cart="add"]').on('click', function(){
 				toastr.success('Cart Added')

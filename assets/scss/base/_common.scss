@@ -158,6 +158,15 @@ p{
 	}
 }
 
+mark{
+	color: $color-white;
+	background-color: $color-primary;
+}
+
+figure{
+	margin-bottom: 0;
+}
+
 .user-select-none{
 	pointer-events: none;
 }
@@ -335,4 +344,54 @@ p{
 			background-position-x: -200%;
 		}
 	}
+}
+
+.spinner{
+    display: inline-flex;
+    border: 1px solid $color-input-border;
+    border-radius: 5px;
+    background-color: $color-card;
+    max-width: toRem(170);
+
+    &__btn,
+    &__input
+    {
+        color: $color-text;
+        border: 0;
+    }
+
+    &__btn{
+        height: toRem(50);
+        padding-inline: toRem(18);
+        flex-shrink: 0;
+        margin: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: inherit;
+        background-color: transparent;
+        @extend %cursor-pointer;
+
+        &:active,
+        &:focus-visible
+        {
+            color: $color-primary;
+            background-color: rgba($color-primary-rgb, 0.1);
+        }
+    }
+
+    &__input{
+        width: 100%;
+        flex-grow: 1;
+        background-color: transparent;
+        font-size: toRem(18);
+        text-align: center;
+        appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+        {
+            appearance: none;
+        }
+    }
 }

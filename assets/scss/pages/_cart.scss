@@ -1,0 +1,160 @@
+@use '../abstracts' as *;
+
+/* Cart Section Style */
+.cart{
+    --_radius: #{toRem(8)};
+    --_remove-btn-size: #{toRem(30)};
+    --_remove-btn-offset: #{toRem(15)};
+
+    &__header,
+    &__item__body__footer
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: toRem(10);
+    }
+
+    &__header{
+        &__title{
+            font-size: toRem(30);
+        }
+
+        &__sub-title{
+            font-size: toRem(20);
+        }
+    }
+
+    &__item,
+    &__body,
+    &__empty
+    {
+        background-color: $color-card;
+    }
+
+    &__item{
+        position: relative;
+        display: flex;
+        @include max-xs{
+            flex-wrap: wrap;
+        }
+        @include min-xxs{
+            align-items: center;
+        }
+        gap: toRem(15);
+        padding: toRem(15);
+
+        &:first-of-type{
+            border-top-left-radius: var(--_radius);
+            border-top-right-radius: var(--_radius);
+        }
+        &:last-of-type{
+            border-bottom-left-radius: var(--_radius);
+            border-bottom-right-radius: var(--_radius);
+        }
+
+        &:not(:first-of-type){
+            border-block-start: 1px solid $color-border;
+        }
+        
+        &__figure{
+            @extend %stacking-context;
+            aspect-ratio: 1;
+            flex-basis: toRem(200);
+            @include max-xs{
+                flex-grow: 1
+            }
+            
+            &__bg{
+                @extend %full-width;
+            }
+        }
+
+        &__title{
+            display: inline-block;
+            @include min-sm{
+                max-width: calc(100% - (var(--_remove-btn-size) + var(--_remove-btn-offset)));
+            }
+            font-size: toRem(22);
+            @extend %fw-bold;
+            @extend %transition;
+
+            &:active{
+                color: $color-primary;
+            }
+            @include hover{
+                &:hover,
+                &:focus-visible
+                {
+                    color: $color-primary;
+                }
+            }
+        }
+        
+        &__text{
+            font-size: toRem(20);
+        }
+
+        &__body{
+            flex-grow: 1;
+        }
+
+        &__btn{
+            position: absolute;
+            top: var(--_remove-btn-offset);
+            right: var(--_remove-btn-offset);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--_remove-btn-size);
+            aspect-ratio: 1;
+            @extend %rounded-circle;
+            @extend %cursor-pointer;
+            @extend %transition;
+            color: $color-white;
+            background-color: $color-primary;
+            @include min-sm{
+                color: $color-text;
+                background-color: transparent;
+            }
+            border: 0;
+
+            &:focus-visible,
+            &:active
+            {
+                color: $color-white;
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    &__body{
+        position: sticky;
+        top: toRem(20);
+        padding: toRem(20);
+        border-radius: var(--_radius);
+    }
+
+    &__empty{
+        padding: toRem(40) toRem(20);
+        border-radius: var(--_radius);
+
+        &__icon{
+            display: inline-block;
+            color: $color-primary;
+            font-size: toRem(60);
+        }
+
+        &__title{
+            font-size: toRem(30);
+            @extend %fw-extrabold;
+        }
+
+        &__text{
+            font-size: toRem(16);
+            margin-block-start: toRem(10);
+            margin-block-end: toRem(20);
+        }
+    }
+}

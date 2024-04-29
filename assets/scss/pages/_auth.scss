@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+/* Auth Section Style */
+.auth{
+    @include min-lg{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    min-height: 100vh;
+    background-color: $color-card;
+    
+    &__figure{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-body;
+
+        &__bg{
+            max-height: toRem(300);
+            @include min-lg{
+                max-height: toRem(500);
+            }
+            height: auto;
+        }
+    }
+    
+    &__content{
+        align-self: center;
+        padding: toRem(30);
+    }
+
+    &__col{
+        max-width: toRem(500);
+
+        .btn{
+            border-radius: 6px;
+        }
+    }
+
+    &__logo{
+        display: inline-block;
+        margin-block-end: toRem(30);
+
+        &__image{
+            max-width: toRem(162);
+            @include show-mobile-menu {
+                max-width: toRem(126);
+            }
+        }
+    }
+
+    &__title{
+        font-size: toRem(40);
+        @extend %fw-extrabold;
+        margin-block-end: toRem(6);
+    }
+
+    &__text{
+        color: $color-text-muted;
+
+        @include min-md{
+            font-size: toRem(16);
+        }
+    }
+}

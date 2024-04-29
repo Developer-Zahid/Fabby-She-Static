@@ -45,47 +45,53 @@
 		})
 	})()
 
-	/* scroll top btn */
-	$(".scroll-top").on("click", function () {
-		$("html,body").animate({scrollTop: 0},50)
-	})
-	$(window).on("scroll", function () {
-		var scrolling = $(this).scrollTop()
-
-		if (scrolling > 200) {
-			$(".scroll-top").fadeIn()
-		} else {
-			$(".scroll-top").fadeOut()
-		}
-	})
-
 	/* Fix Header Height function */
-	$('header').before('<div class="header-height-fix" aria-hidden="true"></div>')
+	if($('header').length > 0){
+		$('header').before('<div class="header-height-fix" aria-hidden="true"></div>')
+	}
     function headerHeightFixer(){
-    	$('.header-height-fix').css('height', $('header').innerHeight() +'px')
+		if($('header').length > 0){
+			$('.header-height-fix').css('height', $('header').innerHeight() +'px')
+		}
 	}
 
-	$('[data-toggle="menu"]').on('click', function(){
-		$(this).toggleClass('active')
-		$('[data-target="menu"]').toggleClass('show')
-	})
-
-	toastr.options = {
-		"closeButton": true,
-		"debug": false,
-		"newestOnTop": true,
-		"progressBar": false,
-		"positionClass": "toast-bottom-right",
-		"preventDuplicates": false,
-		"onclick": null,
-		"showDuration": "300",
-		"hideDuration": "1000",
-		"timeOut": "5000",
-		"extendedTimeOut": "1000",
-		"showEasing": "swing",
-		"hideEasing": "linear",
-		"showMethod": "fadeIn",
-		"hideMethod": "fadeOut",
+	if($('[data-toggle="menu"]').length > 0){
+		$('[data-toggle="menu"]').on('click', function(){
+			$(this).toggleClass('active')
+			$('[data-target="menu"]').toggleClass('show')
+		})
 	}
 
+	if($('[data-toggle="password"]').length > 0){
+		$('[data-toggle="password"]').on('click', function(){
+			const $currentPasswordInput = $(this).closest('.input-group').find('[data-target="password-input"]')
+			if($currentPasswordInput.attr("type") == "password"){
+				$currentPasswordInput.attr("type", "text");
+				$(this).addClass('show')
+			}else{
+				$currentPasswordInput.attr("type", "password");
+				$(this).removeClass('show')
+			}
+		})
+	}
+
+	if(typeof toastr != "undefined"){
+		toastr.options = {
+			"closeButton": true,
+			"debug": false,
+			"newestOnTop": true,
+			"progressBar": false,
+			"positionClass": "toast-bottom-right",
+			"preventDuplicates": false,
+			"onclick": null,
+			"showDuration": "300",
+			"hideDuration": "1000",
+			"timeOut": "5000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut",
+		}
+	}
 })(jQuery)

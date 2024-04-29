@@ -165,15 +165,19 @@ h6,.h6{
 }
 h1,.h1{
     font-size: toRem(36);
+    @extend %fw-semibold;
 }
 h2,.h2{
     font-size: toRem(30);
+    @extend %fw-semibold;
 }
 h3,.h3{
     font-size: toRem(24);
+    @extend %fw-semibold;
 }
 h4,.h4{
     font-size: toRem(18);
+    @extend %fw-semibold;
 }
 h5,.h5{
     font-size: toRem(12);

@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+/* Product search Section Style */
+.search{
+    &__empty{
+        text-align: center;
+
+        &__title{
+            font-size: toRem(26);
+            @extend %fw-semibold;
+        }
+
+        &__figure{
+            &__bg{
+                height: auto;
+                max-height: toRem(300);
+                margin-inline: auto;
+            }
+        }
+    }
+}
