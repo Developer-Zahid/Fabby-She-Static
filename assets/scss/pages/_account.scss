@@ -1,0 +1,226 @@
+@use '../abstracts' as *;
+
+/* Account Section Style */
+.account{
+    &__nav{
+        display: flex;
+        @include max-lg{
+            flex-wrap: wrap;
+        }
+
+        &__item{
+            --_border-color: #{$color-input-border};
+            position: relative;
+            flex-grow: 1;
+            flex-basis: 100%;
+            border: 0;
+            background-color: transparent;
+
+            @include max-lg{
+                flex-basis: 25%;
+            }
+
+            @include max-md{
+                flex-basis: 50%;
+            }
+
+            @include max-xs{
+                flex-basis: 100%;
+            }
+
+            &__btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: toRem(6);
+                flex-basis: 100%;
+                height: 100%;
+                background-color: $color-card;
+                font-size: toRem(20);
+                padding: toRem(20) toRem(10);
+                border-bottom: 1px solid var(--_border-color);
+                @extend %cursor-pointer;
+                @extend %fw-bold;
+                @extend %transition;
+            }
+            
+            &:not(:last-child) .account__nav__item__btn{
+                border-right: 1px solid var(--_border-color);
+            }
+            
+            &.active .account__nav__item__btn,
+            &:active .account__nav__item__btn
+            {
+                color: $color-white;
+                background-color: $color-primary;
+                border-color: $color-primary;
+            }
+
+            &:focus-visible .account__nav__item__btn
+            {
+                color: $color-white;
+                background-color: $color-black;
+                border-color: $color-black;
+            }
+        }
+    }
+
+    &__tab{
+        display: grid;
+        grid-template-rows: 1fr;
+        @extend %transition;
+        // transition:
+        //     opacity .25s $transition-ease,
+        //     visibility .25s $transition-ease;
+
+        &:not(.active){
+            opacity: 0;
+            visibility: hidden;
+            grid-template-rows: 0fr;
+        }
+    }
+
+    &-card{
+        overflow: hidden;
+        border-radius: toRem(10);
+        &__body{
+            background-color: $color-card;
+            padding: toRem(20);
+        }
+    }
+}
+
+.tracking{
+    &-list{
+        --_gap: #{toRem(30)};
+
+        display: grid;
+        gap: var(--_gap);
+        @include min-md{
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+        }
+    }
+
+    &-card{
+        display: grid;
+        gap: toRem(20);
+        @include max-xxxs{
+            gap: toRem(0) toRem(20);
+        }
+        
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+        'indicator icon'
+        'indicator title';
+
+        @include min-xxs{
+            grid-template-columns: auto auto 1fr;
+            grid-template-areas:
+            'indicator icon title';
+        }
+
+        @include min-md{
+            grid-template-columns: 1fr;
+            grid-template-areas:
+            'icon'
+            'indicator'
+            'title';
+        }
+
+        &__indicator{
+            --_deactivate-color: #9b9b9b;
+
+            grid-area: indicator;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__icon{
+                position: relative;
+                display: inline-block;
+                font-size: toRem(25);
+                z-index: 1;
+                color: var(--_deactivate-color);
+            }
+        }
+
+        &__icon{
+            grid-area: icon;
+            color: $color-primary;
+            font-size: toRem(70);
+
+            @include min-md{
+                justify-self: center;
+            }
+        }
+
+        &__title{
+            grid-area: title;
+            align-self: center;
+            font-size: toRem(18);
+            @extend %fw-semibold;
+            @include max-xxxs{
+                padding-block: toRem(10);
+            }
+            @include min-md{
+                text-align: center;
+            }
+        }
+
+        &.active{
+            .tracking-card__indicator{
+                --_deactivate-color: #{$color-success};
+            }
+        }
+    }
+
+    &-list__item:not(:first-child) .tracking-card{
+        &__indicator{
+            position: relative;
+
+            &::before{
+                @extend %common-pseudo;
+                transform: translateY(-50%);
+                height: calc(100% + var(--_gap));
+                width: 1px;
+                border-left: 3px dotted var(--_deactivate-color);
+                
+                @include min-md{
+                    @include rtl(transform, translateX(-50%), translateX(50%));
+                    height: 1px;
+                    width: calc(100% + var(--_gap));
+                    border-bottom: 3px dotted var(--_deactivate-color);
+                }
+            }
+        }
+    }
+
+    &__block{
+        &-grid{
+            display: flex;
+            flex-wrap: wrap;
+            gap: $gutter;
+        }
+
+        padding: toRem(20) toRem(10);
+        background-color: $color-body;
+        border-radius: 6px;
+        flex-grow: 1;
+        flex-basis: 100%;
+        @include min-lg{
+            flex-basis: calc(50% - $gutter);
+        }
+
+        &__title{
+            margin-bottom: 5px;
+            font-size: toRem(18);
+            @extend %fw-medium;
+        }
+        
+        &__text{
+            font-size: toRem(14);
+            @extend %fw-light;
+        }
+    }
+}

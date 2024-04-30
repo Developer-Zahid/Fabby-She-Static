@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+/* Checkout Section Style */
+.checkout{
+    &__card{
+        padding: toRem(30) toRem(20);
+        @include min-md{
+            padding: toRem(30);
+        }
+        background-color: $color-card;
+        border-radius: toRem(10);
+        margin-bottom: $gutter;
+
+        &__title{
+            position: relative;
+            font-size: toRem(24);
+            @extend %fw-extrabold;
+            text-transform: uppercase;
+            margin-bottom: $gutter;
+
+            &::before{
+                content: attr(data-number);
+                display: block;
+                font-size: 80%;
+                color: lighten($color-gray, $amount: 20);
+                @extend %fw-extrabold;
+            }
+        }
+
+        &__list{
+            &__item{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: toRem(10);
+                padding-bottom: toRem(10);
+            }
+        }
+    }
+}

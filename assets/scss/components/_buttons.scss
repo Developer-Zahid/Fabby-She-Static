@@ -3,6 +3,8 @@
 /* Common Button's Style */
 .btn{
     --bs-btn-active-border-color: var(--bs-btn-active-bg);
+    --bs-btn-disabled-bg: var(--_btn-bg);
+    --bs-btn-disabled-border-color: var(--_btn-bg);
 
 	display: inline-flex;
     align-items: center;

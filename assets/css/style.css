@@ -4,7 +4,7 @@ Template Name: Fabby She | Ecommerce website
 Version: 1.00
 ------------------
 */
-.cart__item__title, .cart__item__btn, .testimonial__slider__arrow, .category-card__action__btn, .category-card__heading__title, .product-card__head__figure__bg, .product-card__head__action__btn, .footer__nav__link, .footer__social__icon {
+.account__nav__item__btn, .account__tab, .cart__item__title, .cart__item__btn, .testimonial__slider__arrow, .category-card__action__btn, .category-card__heading__title, .product-card__head__figure__bg, .product-card__head__action__btn, .footer__nav__link, .footer__social__icon {
   transition: all ease-in-out 0.25s;
 }
 
@@ -16,8 +16,12 @@ Version: 1.00
   border-radius: 100rem;
 }
 
-.cart__item__btn, .testimonial__slider__arrow:not(:disabled), .product-card__head__action__btn:not([disabled]), .input-group__btn, .file-uploader, .file-uploader__input, .file-uploader__card, select:not(:disabled), .btn-text, .btn:not(:disabled), .spinner__btn {
+.account__nav__item__btn, .cart__item__btn, .testimonial__slider__arrow:not(:disabled), .product-card__head__action__btn:not([disabled]), .input-group__btn, .file-uploader, .file-uploader__input, .file-uploader__card, select:not(:disabled), .btn-text, .btn:not(:disabled), .spinner__btn {
   cursor: pointer;
+}
+
+.tracking__block__text {
+  font-weight: 300;
 }
 
 .input-group__input::-moz-placeholder {
@@ -28,19 +32,19 @@ Version: 1.00
   font-weight: 400;
 }
 
-.footer__nav__link, .form__group__error, .input-label, .input-group__input, .btn {
+.tracking__block__title, .footer__nav__link, .form__group__error, .input-label, .input-group__input, .btn {
   font-weight: 500;
 }
 
-.search__empty__title, .banner__title, .testimonial-card__footer__text, h1, .h1, h2, .h2, h3, .h3, h4, .h4, .toast-message {
+.tracking-card__title, .search__empty__title, .banner__title, .testimonial-card__footer__text, h1, .h1, h2, .h2, h3, .h3, h4, .h4, .toast-message {
   font-weight: 600;
 }
 
-.cart__item__title {
+.account__nav__item__btn, .cart__item__title, .pagination__btn {
   font-weight: 700;
 }
 
-.auth__title, .cart__empty__title, .sub-banner__title, .category-card__heading__title, .section-header__title {
+.checkout__card__title, .checkout__card__title::before, .auth__title, .cart__empty__title, .sub-banner__title, .category-card__heading__title, .section-header__title {
   font-weight: 800;
 }
 
@@ -64,7 +68,7 @@ Version: 1.00
   height: 100%;
 }
 
-.category-card__action::before, .category-card__action::after, .product-card__head__action::before, .product-card__head__action::after {
+.tracking-list__item:not(:first-child) .tracking-card__indicator::before, .category-card__action::before, .category-card__action::after, .product-card__head__action::before, .product-card__head__action::after {
   content: "";
   position: absolute;
 }
@@ -641,6 +645,8 @@ p {
 /* Common Button's Style */
 .btn {
   --bs-btn-active-border-color: var(--bs-btn-active-bg);
+  --bs-btn-disabled-bg: var(--_btn-bg);
+  --bs-btn-disabled-border-color: var(--_btn-bg);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -904,6 +910,90 @@ input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {
   display: none;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-border-width: 0;
+  width: 100%;
+}
+.table-responsive {
+  overflow-x: auto;
+}
+.table th {
+  white-space: nowrap;
+}
+@media (min-width: 992px) {
+  .table th {
+    font-size: 1.125rem;
+  }
+}
+.table th,
+.table td {
+  padding: 0.625rem;
+}
+.table thead th {
+  color: var(--color-banner-text);
+  background-color: var(--color-banner-bg);
+}
+@media (min-width: 768px) {
+  .table tbody tr:not(:first-child) td {
+    border-top: 1px solid var(--color-border);
+  }
+}
+@media (max-width: 767.98px) {
+  .table tbody tr:not(:first-child) td:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+}
+@media (max-width: 767.98px) {
+  .table thead {
+    display: none;
+  }
+  .table tbody td {
+    position: relative;
+    display: block;
+  }
+  .table tbody td::before {
+    content: attr(data-th) " : ";
+    font-weight: 700;
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.pagination__btn {
+  --_size: 2.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 8px;
+  min-width: var(--_size);
+  height: var(--_size);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text);
+  background-color: transparent;
+}
+@media (hover: hover) {
+  .pagination__btn:where(:not(:disabled)):hover, .pagination__btn:where(:not(:disabled)):focus-visible {
+    background-color: var(--color-body);
+  }
+}
+.pagination__btn.active {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .navbar__logo,
@@ -1918,4 +2008,233 @@ html:not([data-theme=dark]) .navbar__actions__link .is-dark {
   .auth__text {
     font-size: 1rem;
   }
+}
+
+/* Checkout Section Style */
+.checkout__card {
+  padding: 1.875rem 1.25rem;
+  background-color: var(--color-card);
+  border-radius: 0.625rem;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .checkout__card {
+    padding: 1.875rem;
+  }
+}
+.checkout__card__title {
+  position: relative;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.checkout__card__title::before {
+  content: attr(data-number);
+  display: block;
+  font-size: 80%;
+  color: #898989;
+}
+.checkout__card__list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+/* Account Section Style */
+.account__nav {
+  display: flex;
+}
+@media (max-width: 1199.98px) {
+  .account__nav {
+    flex-wrap: wrap;
+  }
+}
+.account__nav__item {
+  --_border-color: var(--color-input-border);
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 100%;
+  border: 0;
+  background-color: transparent;
+}
+@media (max-width: 1199.98px) {
+  .account__nav__item {
+    flex-basis: 25%;
+  }
+}
+@media (max-width: 991.98px) {
+  .account__nav__item {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 575.98px) {
+  .account__nav__item {
+    flex-basis: 100%;
+  }
+}
+.account__nav__item__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  flex-basis: 100%;
+  height: 100%;
+  background-color: var(--color-card);
+  font-size: 1.25rem;
+  padding: 1.25rem 0.625rem;
+  border-bottom: 1px solid var(--_border-color);
+}
+.account__nav__item:not(:last-child) .account__nav__item__btn {
+  border-right: 1px solid var(--_border-color);
+}
+.account__nav__item.active .account__nav__item__btn, .account__nav__item:active .account__nav__item__btn {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.account__nav__item:focus-visible .account__nav__item__btn {
+  color: #ffffff;
+  background-color: #000000;
+  border-color: #000000;
+}
+.account__tab {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.account__tab:not(.active) {
+  opacity: 0;
+  visibility: hidden;
+  grid-template-rows: 0fr;
+}
+.account-card {
+  overflow: hidden;
+  border-radius: 0.625rem;
+}
+.account-card__body {
+  background-color: var(--color-card);
+  padding: 1.25rem;
+}
+
+.tracking-list {
+  --_gap: 1.875rem;
+  display: grid;
+  gap: var(--_gap);
+}
+@media (min-width: 768px) {
+  .tracking-list {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+.tracking-card {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "indicator icon" "indicator title";
+}
+@media (max-width: 319.98px) {
+  .tracking-card {
+    gap: 0rem 1.25rem;
+  }
+}
+@media (min-width: 320px) {
+  .tracking-card {
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "indicator icon title";
+  }
+}
+@media (min-width: 768px) {
+  .tracking-card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "icon" "indicator" "title";
+  }
+}
+.tracking-card__indicator {
+  --_deactivate-color: #9b9b9b;
+  grid-area: indicator;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tracking-card__indicator__icon {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5625rem;
+  z-index: 1;
+  color: var(--_deactivate-color);
+}
+.tracking-card__icon {
+  grid-area: icon;
+  color: var(--color-primary);
+  font-size: 4.375rem;
+}
+@media (min-width: 768px) {
+  .tracking-card__icon {
+    justify-self: center;
+  }
+}
+.tracking-card__title {
+  grid-area: title;
+  align-self: center;
+  font-size: 1.125rem;
+}
+@media (max-width: 319.98px) {
+  .tracking-card__title {
+    padding-block: 0.625rem;
+  }
+}
+@media (min-width: 768px) {
+  .tracking-card__title {
+    text-align: center;
+  }
+}
+.tracking-card.active .tracking-card__indicator {
+  --_deactivate-color: var(--color-success);
+}
+.tracking-list__item:not(:first-child) .tracking-card__indicator {
+  position: relative;
+}
+.tracking-list__item:not(:first-child) .tracking-card__indicator::before {
+  transform: translateY(-50%);
+  height: calc(100% + var(--_gap));
+  width: 1px;
+  border-left: 3px dotted var(--_deactivate-color);
+}
+@media (min-width: 768px) {
+  .tracking-list__item:not(:first-child) .tracking-card__indicator::before {
+    transform: translateX(-50%);
+    height: 1px;
+    width: calc(100% + var(--_gap));
+    border-bottom: 3px dotted var(--_deactivate-color);
+  }
+  [dir=rtl] .tracking-list__item:not(:first-child) .tracking-card__indicator::before {
+    transform: translateX(50%);
+  }
+}
+.tracking__block {
+  padding: 1.25rem 0.625rem;
+  background-color: var(--color-body);
+  border-radius: 6px;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+.tracking__block-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media (min-width: 992px) {
+  .tracking__block {
+    flex-basis: calc(50% - 24px);
+  }
+}
+.tracking__block__title {
+  margin-bottom: 5px;
+  font-size: 1.125rem;
+}
+.tracking__block__text {
+  font-size: 0.875rem;
 }/*# sourceMappingURL=style.css.map */

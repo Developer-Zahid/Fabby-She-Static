@@ -38,9 +38,6 @@
 	
 	<!-- Global CSS -->
 	<link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css" />
-	<!-- Page CSS -->
-	<link rel="stylesheet" href="./assets/plugins/toastr/css/toastr.min.css" />
-	<!-- Global CSS -->
 	<link rel="stylesheet" href="./assets/css/style.min.css" />
 </head>
 <body>
@@ -113,7 +110,7 @@
 							<path d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z" fill="currentColor"></path>
 						</svg>
 					</a>
-					<a href="./cart.html" class="navbar__actions__link active" aria-current="page" aria-label="Total products in your cart">
+					<a href="./cart.html" class="navbar__actions__link" aria-label="Total products in your cart">
 						<span class="navbar__actions__link__count">0</span>
 						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
 							<path d="M22.713 4.077A2.993 2.993 0 0 0 20.41 3H4.242L4.2 2.649A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.82-2h11.92a5 5 0 0 0 4.921-4.113l.785-4.354a2.994 2.994 0 0 0-.65-2.456ZM21.4 6.178l-.786 4.354A3 3 0 0 1 17.657 13H5.419l-.941-8H20.41a1 1 0 0 1 .99 1.178Z" fill="currentColor"></path>
@@ -134,118 +131,157 @@
 	<!-- Sub Banner Section -->
 	<section class="sub-banner">
         <div class="container">
-            <h1 class="sub-banner__title text-center mb-0">Cart Items</h1>
+            <h1 class="sub-banner__title text-center mb-0">Checkout</h1>
         </div>
     </section>
 
-	<!-- Cart Section -->
-	<section class="cart section-gap">
+	<!-- Checkout Section -->
+	<section class="checkout section-gap section-gap--fix">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="cart__header pb-4">
-						<h1 class="cart__header__title">Your Cart</h1>
-						<h2 class="cart__header__sub-title">1 item</h2>
-					</div>
-					<div class="cart__list">
-						<div class="cart__item">
-							<figure class="cart__item__figure">
-								<img class="cart__item__figure__bg" src="./assets/images/products/product-1.jpg" alt="Product preview">
-							</figure>
-							<div class="cart__item__body">
-								<a href="#!" class="cart__item__title">Product title</a>
-								<p class="cart__item__text mt-1">৳ 100 x 2</p>
-								<div class="d-flex align-items-center my-2"><span class="cart__item__text pe-2">Color:</span><span class="product-color-list__item " style="--_variant: #9b8a82;"></span></div>
-								<div class="cart__item__body__footer">
-									<div class="spinner">
-										<button type="button" aria-label="Decrease" class="spinner__btn" data-cart="decrease">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 288H32c-17.673 0-32-14.327-32-32s14.327-32 32-32h448c17.673 0 32 14.327 32 32s-14.327 32-32 32z" fill="currentColor"></path>
-											</svg>
-										</button>
-										<input type="number" class="spinner__input" value="1" min="1" max="10" />
-										<button type="button" aria-label="Increase" class="spinner__btn" data-cart="increase">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 224H288V32c0-17.673-14.327-32-32-32s-32 14.327-32 32v192H32c-17.673 0-32 14.327-32 32s14.327 32 32 32h192v192c0 17.673 14.327 32 32 32s32-14.327 32-32V288h192c17.673 0 32-14.327 32-32s-14.327-32-32-32z" fill="currentColor"></path>
-											</svg>
-										</button>
+			<form action="./account.html" class="row">
+				<div class="col-xl-8">
+					<div class="checkout__card">
+						<div class="mb-4">
+							<h1 class="checkout__card__title" data-number="01">Personal Details</h1>
+							<div class="row">
+								<div class="col-12">
+									<div class="form__group">
+										<div class="input-group">
+											<span class="input-group__icon">
+												<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+													<path d="M12 12a6 6 0 1 0-6-6 6.006 6.006 0 0 0 6 6Zm0-10a4 4 0 1 1-4 4 4 4 0 0 1 4-4ZM12 14a9.01 9.01 0 0 0-9 9 1 1 0 0 0 2 0 7 7 0 0 1 14 0 1 1 0 0 0 2 0 9.01 9.01 0 0 0-9-9Z" fill="currentColor"></path>
+												</svg>
+											</span>
+											<input type="text" class="input-group__input rounded" placeholder="Enter your name" required />
+										</div>
+										<div class="form__group__error">Name is required</div>
 									</div>
-									<p class="cart__item__text"><strong>৳ 200</strong></p>
 								</div>
-								<button type="button" class="cart__item__btn" data-cart="remove">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
-										<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
-									</svg>
-								</button>
+								<div class="col-md-6">
+									<div class="form__group">
+										<div class="input-group">
+											<span class="input-group__icon">
+												<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+													<path d="M19 1H5a5.006 5.006 0 0 0-5 5v12a5.006 5.006 0 0 0 5 5h14a5.006 5.006 0 0 0 5-5V6a5.006 5.006 0 0 0-5-5ZM5 3h14a3 3 0 0 1 2.78 1.887l-7.658 7.659a3.007 3.007 0 0 1-4.244 0L2.22 4.887A3 3 0 0 1 5 3Zm14 18H5a3 3 0 0 1-3-3V7.5l6.464 6.46a5.007 5.007 0 0 0 7.072 0L22 7.5V18a3 3 0 0 1-3 3Z" fill="currentColor"></path>
+												</svg>
+											</span>
+											<input type="email" class="input-group__input rounded" placeholder="Enter your email" required />
+										</div>
+										<div class="form__group__error">Email is required</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form__group">
+										<div class="input-group">
+											<span class="input-group__icon">
+												<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+													<path d="M15.045 0h-6.09A5.006 5.006 0 0 0 4 4.999v14c0 2.757 2.243 5 5 5h6c2.757 0 5-2.243 5-5V5a5.007 5.007 0 0 0-4.955-5ZM18 18.999c0 1.654-1.346 3-3 3H9c-1.654 0-3-1.346-3-3V5a3.006 3.006 0 0 1 2.411-2.942l.694 1.389A1 1 0 0 0 10 4h4c.379 0 .725-.214.895-.553l.694-1.389A3.005 3.005 0 0 1 18 5v14Zm-5 1h-2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" fill="currentColor"></path>
+												</svg>
+											</span>
+											<input type="tel" class="input-group__input rounded" placeholder="Enter your number" required />
+										</div>
+										<div class="form__group__error">Phone number is required</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="cart__item">
-							<figure class="cart__item__figure">
-								<img class="cart__item__figure__bg" src="./assets/images/products/product-2.jpg" alt="Product preview">
-							</figure>
-							<div class="cart__item__body">
-								<a href="#!" class="cart__item__title">Product title</a>
-								<p class="cart__item__text mt-1">৳ 200 x 3</p>
-								<div class="d-flex align-items-center my-2"><span class="cart__item__text pe-2">Color:</span><span class="product-color-list__item " style="--_variant: #76321b;"></span></div>
-								<div class="cart__item__body__footer">
-									<div class="spinner">
-										<button type="button" aria-label="Decrease" class="spinner__btn" data-cart="decrease">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 288H32c-17.673 0-32-14.327-32-32s14.327-32 32-32h448c17.673 0 32 14.327 32 32s-14.327 32-32 32z" fill="currentColor"></path>
+						<h1 class="checkout__card__title" data-number="02">Shipping Details</h1>
+						<div class="row">
+							<div class="col-12">
+								<div class="form__group">
+									<div class="input-group">
+										<span class="input-group__icon">
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+												<path d="M12 6a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z" fill="currentColor"></path>
+												<path d="M12 24a5.271 5.271 0 0 1-4.311-2.2c-3.811-5.257-5.744-9.209-5.744-11.747a10.055 10.055 0 0 1 20.11 0c0 2.538-1.933 6.49-5.744 11.747A5.271 5.271 0 0 1 12 24Zm0-21.819a7.883 7.883 0 0 0-7.874 7.874c0 2.01 1.893 5.727 5.329 10.466a3.145 3.145 0 0 0 5.09 0c3.436-4.739 5.329-8.456 5.329-10.466A7.883 7.883 0 0 0 12 2.181Z" fill="currentColor"></path>
 											</svg>
-										</button>
-										<input type="number" class="spinner__input" value="1" min="1" max="10" />
-										<button type="button" aria-label="Increase" class="spinner__btn" data-cart="increase">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 224H288V32c0-17.673-14.327-32-32-32s-32 14.327-32 32v192H32c-17.673 0-32 14.327-32 32s14.327 32 32 32h192v192c0 17.673 14.327 32 32 32s32-14.327 32-32V288h192c17.673 0 32-14.327 32-32s-14.327-32-32-32z" fill="currentColor"></path>
-											</svg>
-										</button>
+										</span>
+										<select name="city" class="input-group__input rounded" required>
+											<option value="" disabled selected>Select City</option>
+											<option value="1">Dhaka</option>
+											<option value="2">Khulna</option>
+										</select>
 									</div>
-									<p class="cart__item__text"><strong>৳ 600</strong></p>
+									<div class="form__group__error">City is required</div>
 								</div>
-								<button type="button" class="cart__item__btn" data-cart="remove">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
-										<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
-									</svg>
-								</button>
 							</div>
-						</div>
-
-						<div class="cart__empty text-center">
-							<span class="cart__empty__icon">
-								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-									<path fill="currentColor" d="M19 11.5A5.51 5.51 0 0 1 13.5 6H6.35l1.06 8.97 12.89-1a1 1 0 0 0 .91-.87l.29-2.21c-.75.38-1.6.61-2.5.61z"></path>
-									<path fill="#222222" d="M20 17.25H8.43l-.19-1.58 12.11-.95c.82-.07 1.49-.7 1.6-1.52l.14-1.1a.753.753 0 0 0-.65-.84.748.748 0 0 0-.84.65l-.14 1.1a.23.23 0 0 1-.23.21l-12.17.96-.87-7.42h4.8c.41 0 .75-.34.75-.75s-.34-.75-.75-.75H7.01L6.9 4.3a2.766 2.766 0 0 0-2.06-2.35l-2.66-.67c-.4-.1-.81.14-.91.55-.1.4.14.81.55.91l2.66.67c.5.12.88.55.94 1.07l1.53 13c-.99.41-1.7 1.4-1.7 2.54 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75c0-.45-.12-.87-.31-1.25h7.13c-.19.38-.31.8-.31 1.25 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75-1.23-2.75-2.75-2.75zM9.25 20a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM20 21.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM15.97 7.97 17.94 6l-1.97-1.97c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0L19 4.94l1.97-1.97c.29-.29.77-.29 1.06 0s.29.77 0 1.06L20.06 6l1.97 1.97c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22L19 7.06l-1.97 1.97c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06z"></path>
-								</svg>
-							</span>
-							<h3 class="cart__empty__title">Your Cart is Empty</h3>
-							<p class="cart__empty__text">Nothing in Your Basket. Time to Browse and Shop</p>
-							<a href="./shop.html" class="btn btn-primary rounded">Start Shopping</a>
+							<div class="col-12">
+								<div class="form__group">
+									<div class="input-group">
+										<span class="input-group__icon">
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+												<path d="M12 6a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z" fill="currentColor"></path>
+												<path d="M12 24a5.271 5.271 0 0 1-4.311-2.2c-3.811-5.257-5.744-9.209-5.744-11.747a10.055 10.055 0 0 1 20.11 0c0 2.538-1.933 6.49-5.744 11.747A5.271 5.271 0 0 1 12 24Zm0-21.819a7.883 7.883 0 0 0-7.874 7.874c0 2.01 1.893 5.727 5.329 10.466a3.145 3.145 0 0 0 5.09 0c3.436-4.739 5.329-8.456 5.329-10.466A7.883 7.883 0 0 0 12 2.181Z" fill="currentColor"></path>
+											</svg>
+										</span>
+										<select name="zone" class="input-group__input rounded" required>
+											<option value="" disabled selected>Select Zone (First select a city 👆)</option>
+											<option value="1">Zone Name</option>
+											<option value="2">Zone Name</option>
+										</select>
+									</div>
+									<div class="form__group__error">Zone is required</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form__group">
+									<div class="input-group">
+										<span class="input-group__icon">
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+												<path d="M12 6a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z" fill="currentColor"></path>
+												<path d="M12 24a5.271 5.271 0 0 1-4.311-2.2c-3.811-5.257-5.744-9.209-5.744-11.747a10.055 10.055 0 0 1 20.11 0c0 2.538-1.933 6.49-5.744 11.747A5.271 5.271 0 0 1 12 24Zm0-21.819a7.883 7.883 0 0 0-7.874 7.874c0 2.01 1.893 5.727 5.329 10.466a3.145 3.145 0 0 0 5.09 0c3.436-4.739 5.329-8.456 5.329-10.466A7.883 7.883 0 0 0 12 2.181Z" fill="currentColor"></path>
+											</svg>
+										</span>
+										<select name="area" class="input-group__input rounded" required>
+											<option value="" disabled selected>Select Area (First select a zone 👆)</option>
+											<option value="1">Area Name</option>
+											<option value="2">Area Name</option>
+										</select>
+									</div>
+									<div class="form__group__error">Area is required</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form__group mb-0">
+									<div class="input-group">
+										<span class="input-group__icon">
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+												<path d="M12 6a4 4 0 1 0 4 4 4 4 0 0 0-4-4Zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2Z" fill="currentColor"></path>
+												<path d="M12 24a5.271 5.271 0 0 1-4.311-2.2c-3.811-5.257-5.744-9.209-5.744-11.747a10.055 10.055 0 0 1 20.11 0c0 2.538-1.933 6.49-5.744 11.747A5.271 5.271 0 0 1 12 24Zm0-21.819a7.883 7.883 0 0 0-7.874 7.874c0 2.01 1.893 5.727 5.329 10.466a3.145 3.145 0 0 0 5.09 0c3.436-4.739 5.329-8.456 5.329-10.466A7.883 7.883 0 0 0 12 2.181Z" fill="currentColor"></path>
+											</svg>
+										</span>
+										<input type="text" name="address" class="input-group__input rounded" placeholder="Enter manually your area name" required />
+									</div>
+									<div class="form__group__error">Address is required</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 mt-4 mt-lg-0">
-					<div class="cart__header pb-4">
-						<h1 class="cart__header__title">Order Summary</h1>
-					</div>
-					<div class="cart__body">
-						<div key={index} class="cart__header pb-2">
-							<span>৳ 100 x 2</span>
-							<strong>(+) ৳ 200</strong>
+				<div class="col-xl-4">
+					<div class="checkout__card">
+						<h1 class="checkout__card__title" data-number="03">Order Summary</h1>
+						<div class="mb-4">
+							<div class="checkout__card__list">
+								<div class="checkout__card__list__item">
+									<span>Subtotal</span>
+									<strong>৳ 800</strong>
+								</div>
+								<div class="checkout__card__list__item">
+									<span>Shipping cost</span>
+									<strong>(+) ৳ 0</strong>
+								</div>
+								<div class="hr"></div>
+								<div class="checkout__card__list__item pt-3">
+									<strong>Total</strong>
+									<strong>৳ 800</strong>
+								</div>
+							</div>
 						</div>
-						<div key={index} class="cart__header pb-2">
-							<span>৳ 200 x 3</span>
-							<strong>(+) ৳ 600</strong>
-						</div>
-						<div class="hr mb-2"></div>
-						<div class="cart__header">
-							<h2 class="cart__header__title">Total</h2>
-							<h2 class="cart__header__title">৳ 800</h2>
-						</div>
-						<a href="./checkout.html" class="btn btn-dark text-center w-100 rounded mt-4">Proceed To Checkout</a>
+						<button type="submit" class="btn btn-primary rounded w-100">Checkout</button>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</section>
 
@@ -301,24 +337,6 @@
 	<!-- Global Scripts -->
 	<script src="./assets/plugins/jquery/jquery-3.6.4.min.js"></script>
 	<script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- Page Scripts -->
-	<script src="./assets/plugins/toastr/js/toastr.min.js"></script>
-	<!-- Global Scripts -->
 	<script src="./assets/js/script.js"></script>
-	<!-- Page Scripts -->
-	<script>
-		$(document).ready(function () {
-			// Carts function
-			$('[data-cart="increase"]').on('click', function(){
-				toastr.success('Cart Updated')
-			})
-			$('[data-cart="decrease"]').on('click', function(){
-				toastr.success('Cart Updated')
-			})
-			$('[data-cart="remove"]').on('click', function(){
-				toastr.success('Cart removed successfully')
-			})
-		})
-	</script>
 </body>
 </html>

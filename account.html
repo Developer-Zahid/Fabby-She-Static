@@ -38,9 +38,6 @@
 	
 	<!-- Global CSS -->
 	<link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css" />
-	<!-- Page CSS -->
-	<link rel="stylesheet" href="./assets/plugins/toastr/css/toastr.min.css" />
-	<!-- Global CSS -->
 	<link rel="stylesheet" href="./assets/css/style.min.css" />
 </head>
 <body>
@@ -113,7 +110,7 @@
 							<path d="m23.707 22.293-5.969-5.969a10.016 10.016 0 1 0-1.414 1.414l5.969 5.969a1 1 0 0 0 1.414-1.414ZM10 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8Z" fill="currentColor"></path>
 						</svg>
 					</a>
-					<a href="./cart.html" class="navbar__actions__link active" aria-current="page" aria-label="Total products in your cart">
+					<a href="./cart.html" class="navbar__actions__link" aria-label="Total products in your cart">
 						<span class="navbar__actions__link__count">0</span>
 						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
 							<path d="M22.713 4.077A2.993 2.993 0 0 0 20.41 3H4.242L4.2 2.649A3 3 0 0 0 1.222 0H1a1 1 0 0 0 0 2h.222a1 1 0 0 1 .993.883l1.376 11.7A5 5 0 0 0 8.557 19H19a1 1 0 0 0 0-2H8.557a3 3 0 0 1-2.82-2h11.92a5 5 0 0 0 4.921-4.113l.785-4.354a2.994 2.994 0 0 0-.65-2.456ZM21.4 6.178l-.786 4.354A3 3 0 0 1 17.657 13H5.419l-.941-8H20.41a1 1 0 0 1 .99 1.178Z" fill="currentColor"></path>
@@ -121,7 +118,7 @@
 							<circle cx="17" cy="22" r="2" fill="currentColor"></circle>
 						</svg>
 					</a>
-					<a href="./login.html" class="navbar__actions__link" aria-label="Login page">
+					<a href="./login.html" class="navbar__actions__link active" aria-current="page" aria-label="Login page">
 						<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
 							<path d="M12 12a6 6 0 1 0-6-6 6.006 6.006 0 0 0 6 6Zm0-10a4 4 0 1 1-4 4 4 4 0 0 1 4-4ZM12 14a9.01 9.01 0 0 0-9 9 1 1 0 0 0 2 0 7 7 0 0 1 14 0 1 1 0 0 0 2 0 9.01 9.01 0 0 0-9-9Z" fill="currentColor"></path>
 						</svg>
@@ -134,118 +131,138 @@
 	<!-- Sub Banner Section -->
 	<section class="sub-banner">
         <div class="container">
-            <h1 class="sub-banner__title text-center mb-0">Cart Items</h1>
+            <h1 class="sub-banner__title text-center mb-0">Account</h1>
         </div>
     </section>
 
-	<!-- Cart Section -->
-	<section class="cart section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="cart__header pb-4">
-						<h1 class="cart__header__title">Your Cart</h1>
-						<h2 class="cart__header__sub-title">1 item</h2>
+	<!-- Account Section -->
+	<section class="account pb-5">
+		<div class="account__nav" role="tablist">
+			<button class="account__nav__item active" id="account-dashboard-tab" data-bs-toggle="pill" data-bs-target="#account-dashboard-pane" type="button" role="tab" aria-controls="account-dashboard-pane" aria-selected="true">
+				<span class="account__nav__item__btn">
+					<svg width="1em" height="1em" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M408.496 448H279.504C269.031 447.987 258.99 443.821 251.584 436.416C244.179 429.01 240.013 418.969 240 408.496V247.504C240.013 237.031 244.179 226.99 251.584 219.584C258.99 212.179 269.031 208.013 279.504 208H408.496C418.969 208.013 429.01 212.179 436.416 219.584C443.821 226.99 447.987 237.031 448 247.504V408.496C447.987 418.969 443.821 429.01 436.416 436.416C429.01 443.821 418.969 447.987 408.496 448ZM279.504 240C278.519 240 277.543 240.194 276.632 240.571C275.722 240.948 274.895 241.501 274.198 242.198C273.501 242.895 272.948 243.722 272.571 244.632C272.194 245.543 272 246.519 272 247.504V408.496C272 412.64 275.36 416 279.504 416H408.496C412.64 416 416 412.64 416 408.496V247.504C416 245.514 415.209 243.605 413.802 242.198C412.395 240.791 410.486 240 408.496 240H279.504ZM408.496 176H279.504C269.031 175.987 258.99 171.821 251.584 164.416C244.179 157.01 240.013 146.969 240 136.496V39.504C240.013 29.0308 244.179 18.9902 251.584 11.5845C258.99 4.1788 269.031 0.0127025 279.504 0H408.496C418.969 0.0127025 429.01 4.1788 436.416 11.5845C443.821 18.9902 447.987 29.0308 448 39.504V136.496C447.987 146.969 443.821 157.01 436.416 164.416C429.01 171.821 418.969 175.987 408.496 176ZM279.504 32C278.519 32 277.543 32.1941 276.632 32.5712C275.722 32.9483 274.895 33.5011 274.198 34.1979C273.501 34.8947 272.948 35.7219 272.571 36.6323C272.194 37.5428 272 38.5186 272 39.504V136.496C272 140.64 275.36 144 279.504 144H408.496C412.64 144 416 140.64 416 136.496V39.504C416 37.5138 415.209 35.6051 413.802 34.1979C412.395 32.7906 410.486 32 408.496 32H279.504ZM168.496 240H39.504C29.0308 239.987 18.9902 235.821 11.5845 228.416C4.1788 221.01 0.0127025 210.969 0 200.496V39.504C0.0127025 29.0308 4.1788 18.9902 11.5845 11.5845C18.9902 4.1788 29.0308 0.0127025 39.504 0H168.496C178.969 0.0127025 189.01 4.1788 196.416 11.5845C203.821 18.9902 207.987 29.0308 208 39.504V200.496C207.987 210.969 203.821 221.01 196.416 228.416C189.01 235.821 178.969 239.987 168.496 240ZM39.504 32C37.5138 32 35.6051 32.7906 34.1979 34.1979C32.7906 35.6051 32 37.5138 32 39.504V200.496C32 204.64 35.36 208 39.504 208H168.496C172.64 208 176 204.64 176 200.496V39.504C176 37.5138 175.209 35.6051 173.802 34.1979C172.395 32.7906 170.486 32 168.496 32H39.504ZM168.496 448H39.504C29.0308 447.987 18.9902 443.821 11.5845 436.416C4.1788 429.01 0.0127025 418.969 0 408.496V311.504C0.0127025 301.031 4.1788 290.99 11.5845 283.584C18.9902 276.179 29.0308 272.013 39.504 272H168.496C178.969 272.013 189.01 276.179 196.416 283.584C203.821 290.99 207.987 301.031 208 311.504V408.496C207.987 418.969 203.821 429.01 196.416 436.416C189.01 443.821 178.969 447.987 168.496 448ZM39.504 304C37.5138 304 35.6051 304.791 34.1979 306.198C32.7906 307.605 32 309.514 32 311.504V408.496C32 412.64 35.36 416 39.504 416H168.496C172.64 416 176 412.64 176 408.496V311.504C176 309.514 175.209 307.605 173.802 306.198C172.395 304.791 170.486 304 168.496 304H39.504Z" fill="currentColor"/>
+					</svg>
+					Dashboard
+				</span>
+			</button>
+			<button class="account__nav__item" id="account-orders-tab" data-bs-toggle="pill" data-bs-target="#account-orders-pane" type="button" role="tab" aria-controls="account-orders-pane" aria-selected="false">
+				<span class="account__nav__item__btn">
+					<svg width="1em" height="1em" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M458.736 422.218L435.871 134.102C434.446 115.54 418.748 100.999 400.132 100.999H354.969V98.969C354.969 44.397 310.572 0 256 0C201.428 0 157.031 44.397 157.031 98.969V100.999H111.869C93.2525 100.999 77.5535 115.539 76.1335 134.063L53.2615 422.257C51.4915 445.332 59.4965 468.305 75.2225 485.283C90.9485 502.261 113.241 512 136.384 512H375.615C398.757 512 421.051 502.262 436.778 485.283C452.504 468.304 460.508 445.332 458.736 422.218ZM187.021 98.969C187.021 60.934 217.966 29.99 256 29.99C294.034 29.99 324.979 60.935 324.979 98.969V100.999H187.021V98.969ZM414.775 464.905C404.557 475.935 390.651 482.01 375.615 482.01H136.385C121.349 482.01 107.443 475.935 97.2255 464.905C87.0085 453.874 82.0145 439.542 83.1625 424.59L106.032 136.395C106.264 133.363 108.828 130.989 111.869 130.989H157.031V167.924C157.031 176.205 163.745 182.919 172.026 182.919C180.307 182.919 187.021 176.205 187.021 167.924V130.989H324.979V167.924C324.979 176.205 331.693 182.919 339.974 182.919C348.255 182.919 354.969 176.205 354.969 167.924V130.989H400.132C403.172 130.989 405.736 133.364 405.972 136.435L428.837 424.55C429.987 439.542 424.992 453.873 414.775 464.905Z" fill="currentColor"/>
+						<path d="M323.555 254.287C317.701 248.431 308.206 248.431 302.351 254.287L235.395 321.243L209.649 295.497C203.794 289.641 194.299 289.641 188.443 295.497C182.587 301.353 182.587 310.847 188.443 316.703L224.792 353.052C227.72 355.98 231.558 357.445 235.394 357.445C239.23 357.445 243.069 355.981 245.996 353.052L323.554 275.494C329.411 269.637 329.411 260.143 323.555 254.287Z" fill="currentColor"/>
+					</svg>
+					Orders
+				</span>
+			</button>
+			<button class="account__nav__item" id="account-track-order-tab" data-bs-toggle="pill" data-bs-target="#account-track-order-pane" type="button" role="tab" aria-controls="account-track-order-pane" aria-selected="false">
+				<span class="account__nav__item__btn">
+					<svg width="1em" height="1em" viewBox="0 0 460 417" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M244.784 372.268L228.123 379.734C227.014 380.246 225.819 380.46 224.667 380.865V194.838C230.337 193.724 235.873 192.007 241.179 189.718L383.152 126.721C384.035 130.075 384.543 133.516 384.667 136.982V208.001C384.667 212.244 386.353 216.314 389.353 219.315C392.354 222.315 396.424 224.001 400.667 224.001C404.91 224.001 408.98 222.315 411.981 219.315C414.981 216.314 416.667 212.244 416.667 208.001V136.982C416.606 123.68 413.218 110.604 406.811 98.945V98.7317C406.811 98.5397 406.555 98.433 406.47 98.241C398.117 83.0606 385.05 71.0118 369.243 63.9157L241.243 6.99833C231.007 2.41068 219.916 0.0390625 208.699 0.0390625C197.482 0.0390625 186.391 2.41068 176.155 6.99833L48.155 63.937C32.3514 71.0276 19.2846 83.0686 10.9283 98.241C10.9283 98.433 10.6723 98.5397 10.587 98.7317V98.945C4.1581 110.598 0.747825 123.674 0.666992 136.982V279.02C0.675267 294.485 5.16489 309.617 13.5927 322.584C22.0205 335.551 34.0254 345.799 48.155 352.086L176.155 409.004C186.396 413.602 197.495 415.979 208.72 415.979C219.946 415.979 231.045 413.602 241.286 409.004L257.947 401.537C259.865 400.677 261.594 399.448 263.037 397.919C264.479 396.391 265.607 394.593 266.354 392.629C267.102 390.665 267.456 388.573 267.395 386.472C267.334 384.371 266.86 382.303 266 380.385C265.14 378.467 263.911 376.738 262.382 375.295C260.854 373.853 259.056 372.725 257.092 371.978C255.128 371.23 253.036 370.876 250.935 370.937C248.834 370.998 246.766 371.472 244.848 372.332L244.784 372.268ZM189.211 36.2037C195.339 33.4504 201.981 32.0269 208.699 32.0269C215.417 32.0269 222.059 33.4504 228.187 36.2037L356.187 93.1423C359.68 94.7978 362.96 96.8678 365.958 99.3077L307.739 125.185L152.923 52.2677L189.211 36.2037ZM114.288 69.5263L269.062 142.358L228.294 160.47C222.118 163.157 215.455 164.543 208.72 164.543C201.985 164.543 195.323 163.157 189.147 160.47L51.3763 99.329C54.374 96.8892 57.6545 94.8192 61.147 93.1637L114.288 69.5263ZM61.147 322.838C52.6723 319.069 45.4719 312.924 40.4174 305.147C35.3628 297.37 32.6707 288.295 32.667 279.02V136.982C32.7912 133.516 33.2992 130.075 34.1817 126.721L176.24 189.804C181.514 192.095 187.022 193.805 192.667 194.902V380.929C191.494 380.524 190.278 380.289 189.147 379.777L61.147 322.838ZM454.64 388.609L421.595 355.564C432.244 339.313 436.489 319.692 433.509 300.493C430.529 281.295 420.536 263.883 405.463 251.625C390.389 239.367 371.306 233.134 351.903 234.131C332.5 235.128 314.156 243.284 300.418 257.022C286.68 270.76 278.524 289.104 277.528 308.507C276.531 327.909 282.764 346.993 295.022 362.066C307.28 377.139 324.692 387.132 343.89 390.112C363.089 393.092 382.71 388.847 398.96 378.198L432.027 411.244C433.504 412.771 435.27 413.989 437.222 414.827C439.175 415.664 441.274 416.105 443.399 416.122C445.523 416.14 447.63 415.734 449.596 414.928C451.562 414.123 453.348 412.934 454.849 411.431C456.351 409.928 457.538 408.141 458.342 406.174C459.145 404.208 459.549 402.101 459.53 399.976C459.51 397.852 459.068 395.752 458.228 393.801C457.389 391.849 456.169 390.084 454.64 388.609ZM310 312.833C309.996 303.689 312.704 294.749 317.781 287.144C322.858 279.538 330.077 273.61 338.524 270.107C346.971 266.605 356.266 265.687 365.235 267.468C374.205 269.249 382.444 273.651 388.911 280.115C395.379 286.579 399.784 294.817 401.569 303.785C403.355 312.753 402.44 322.049 398.942 330.498C395.444 338.947 389.518 346.168 381.916 351.248C374.313 356.329 365.374 359.041 356.23 359.041C343.976 359.03 332.227 354.158 323.561 345.496C314.894 336.833 310.017 325.087 310 312.833Z" fill="currentColor"/>
+					</svg>
+					Track Your Order
+				</span>
+			</button>
+			<button class="account__nav__item" id="account-user-details-tab" data-bs-toggle="pill" data-bs-target="#account-user-details-pane" type="button" role="tab" aria-controls="account-user-details-pane" aria-selected="false">
+				<span class="account__nav__item__btn">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
+						<path d="M12 12a6 6 0 1 0-6-6 6.006 6.006 0 0 0 6 6Zm0-10a4 4 0 1 1-4 4 4 4 0 0 1 4-4ZM12 14a9.01 9.01 0 0 0-9 9 1 1 0 0 0 2 0 7 7 0 0 1 14 0 1 1 0 0 0 2 0 9.01 9.01 0 0 0-9-9Z" fill="currentColor"></path>
+					</svg>
+					Account Details
+				</span>
+			</button>
+			<a href="./" class="account__nav__item">
+				<span class="account__nav__item__btn">
+					<svg width="1em" height="1em" viewBox="0 0 449 428" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fillRule="evenodd" clipRule="evenodd" d="M0.666992 96.668C0.666992 71.2072 10.7812 46.7892 28.7847 28.7857C46.7882 10.7822 71.2062 0.667969 96.667 0.667969H214C236.632 0.667969 258.337 9.65842 274.34 25.6615C290.343 41.6646 299.334 63.3695 299.334 86.0013V107.335C299.334 112.993 297.086 118.419 293.085 122.42C289.084 126.42 283.658 128.668 278 128.668C272.342 128.668 266.916 126.42 262.915 122.42C258.915 118.419 256.667 112.993 256.667 107.335V86.0013C256.667 74.6854 252.172 63.833 244.17 55.8314C236.169 47.8299 225.316 43.3346 214 43.3346H96.667C82.5221 43.3346 68.9566 48.9537 58.9546 58.9556C48.9527 68.9575 43.3337 82.5231 43.3337 96.668V331.335C43.3337 345.48 48.9527 359.045 58.9546 369.047C68.9566 379.049 82.5221 384.668 96.667 384.668H214C225.316 384.668 236.169 380.173 244.17 372.171C252.172 364.17 256.667 353.317 256.667 342.001V320.668C256.667 315.01 258.915 309.584 262.915 305.583C266.916 301.582 272.342 299.335 278 299.335C283.658 299.335 289.084 301.582 293.085 305.583C297.086 309.584 299.334 315.01 299.334 320.668V342.001C299.334 364.633 290.343 386.338 274.34 402.341C258.337 418.344 236.632 427.335 214 427.335H96.667C71.2062 427.335 46.7882 417.22 28.7847 399.217C10.7812 381.213 0.666992 356.795 0.666992 331.335V96.668ZM348.251 134.919C352.252 130.919 357.677 128.673 363.334 128.673C368.991 128.673 374.416 130.919 378.416 134.919L442.416 198.919C446.416 202.919 448.662 208.344 448.662 214.001C448.662 219.658 446.416 225.083 442.416 229.084L378.416 293.084C374.393 296.97 369.004 299.12 363.41 299.072C357.817 299.023 352.466 296.779 348.511 292.824C344.556 288.869 342.312 283.518 342.263 277.925C342.215 272.331 344.365 266.942 348.251 262.919L375.835 235.335H192.667C187.009 235.335 181.583 233.087 177.582 229.086C173.581 225.085 171.334 219.659 171.334 214.001C171.334 208.343 173.581 202.917 177.582 198.916C181.583 194.916 187.009 192.668 192.667 192.668H375.835L348.251 165.084C344.252 161.083 342.005 155.658 342.005 150.001C342.005 144.344 344.252 138.919 348.251 134.919Z" fill="currentColor"/>
+					</svg>
+					Logout
+				</span>
+			</a>
+		</div>
+		<div class="container pt-5">
+			<div class="tab-content">
+				<div class="tab-pane fade show active" id="account-dashboard-pane" role="tabpanel" aria-labelledby="account-dashboard-tab" tabindex="0">
+					<div class="account-card">
+						<div class="account-card__body">
+							<h1 class="h3 mb-0">Hello User!</h1>
+						</div>
+						<div class="hr"></div>
+						<div class="account-card__body">
+							<p class="mb-0">From your account dashboard. you can easily check & view your <button type="button" class="btn-text">recent orders</button> and <button type="button" class="btn-text">edit your password and account details.</button></p>
+						</div>
 					</div>
-					<div class="cart__list">
-						<div class="cart__item">
-							<figure class="cart__item__figure">
-								<img class="cart__item__figure__bg" src="./assets/images/products/product-1.jpg" alt="Product preview">
-							</figure>
-							<div class="cart__item__body">
-								<a href="#!" class="cart__item__title">Product title</a>
-								<p class="cart__item__text mt-1">৳ 100 x 2</p>
-								<div class="d-flex align-items-center my-2"><span class="cart__item__text pe-2">Color:</span><span class="product-color-list__item " style="--_variant: #9b8a82;"></span></div>
-								<div class="cart__item__body__footer">
-									<div class="spinner">
-										<button type="button" aria-label="Decrease" class="spinner__btn" data-cart="decrease">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 288H32c-17.673 0-32-14.327-32-32s14.327-32 32-32h448c17.673 0 32 14.327 32 32s-14.327 32-32 32z" fill="currentColor"></path>
-											</svg>
-										</button>
-										<input type="number" class="spinner__input" value="1" min="1" max="10" />
-										<button type="button" aria-label="Increase" class="spinner__btn" data-cart="increase">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 224H288V32c0-17.673-14.327-32-32-32s-32 14.327-32 32v192H32c-17.673 0-32 14.327-32 32s14.327 32 32 32h192v192c0 17.673 14.327 32 32 32s32-14.327 32-32V288h192c17.673 0 32-14.327 32-32s-14.327-32-32-32z" fill="currentColor"></path>
-											</svg>
-										</button>
-									</div>
-									<p class="cart__item__text"><strong>৳ 200</strong></p>
-								</div>
-								<button type="button" class="cart__item__btn" data-cart="remove">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
-										<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
-									</svg>
-								</button>
+				</div>
+				<div class="tab-pane fade" id="account-orders-pane" role="tabpanel" aria-labelledby="account-orders-tab" tabindex="0">
+					<div class="account-card">
+						<div class="account-card__body">
+							<h1 class="h3 mb-0">Your Orders</h1>
+						</div>
+						<div class="hr"></div>
+						<div class="account-card__body p-0">
+							<div class="table-responsive">
+								<table class="table mb-0">
+									<thead class="text-start">
+										<tr>
+											<th>Order ID</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th>Total</th>
+											<th>Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-th="Order ID">#001</td>
+											<td data-th="Date">March 45, 2020</td>
+											<td data-th="Status">Processing</td>
+											<td data-th="Total">$125.00 for 2 item</td>
+											<td data-th="Actions">
+												<button type="button" class="btn-text">View</button>
+											</td>
+										</tr>
+										<tr>
+											<td data-th="Order ID">#002</td>
+											<td data-th="Date">March 45, 2020</td>
+											<td data-th="Status">Processing</td>
+											<td data-th="Total">$125.00 for 2 item</td>
+											<td data-th="Actions">
+												<button type="button" class="btn-text">View</button>
+											</td>
+										</tr>
+										<tr>
+											<td data-th="Order ID">#003</td>
+											<td data-th="Date">March 45, 2020</td>
+											<td data-th="Status">Processing</td>
+											<td data-th="Total">$125.00 for 2 item</td>
+											<td data-th="Actions">
+												<button type="button" class="btn-text">View</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
-						<div class="cart__item">
-							<figure class="cart__item__figure">
-								<img class="cart__item__figure__bg" src="./assets/images/products/product-2.jpg" alt="Product preview">
-							</figure>
-							<div class="cart__item__body">
-								<a href="#!" class="cart__item__title">Product title</a>
-								<p class="cart__item__text mt-1">৳ 200 x 3</p>
-								<div class="d-flex align-items-center my-2"><span class="cart__item__text pe-2">Color:</span><span class="product-color-list__item " style="--_variant: #76321b;"></span></div>
-								<div class="cart__item__body__footer">
-									<div class="spinner">
-										<button type="button" aria-label="Decrease" class="spinner__btn" data-cart="decrease">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 288H32c-17.673 0-32-14.327-32-32s14.327-32 32-32h448c17.673 0 32 14.327 32 32s-14.327 32-32 32z" fill="currentColor"></path>
-											</svg>
-										</button>
-										<input type="number" class="spinner__input" value="1" min="1" max="10" />
-										<button type="button" aria-label="Increase" class="spinner__btn" data-cart="increase">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512 512" xmlSpace="preserve">
-												<path d="M480 224H288V32c0-17.673-14.327-32-32-32s-32 14.327-32 32v192H32c-17.673 0-32 14.327-32 32s14.327 32 32 32h192v192c0 17.673 14.327 32 32 32s32-14.327 32-32V288h192c17.673 0 32-14.327 32-32s-14.327-32-32-32z" fill="currentColor"></path>
-											</svg>
-										</button>
-									</div>
-									<p class="cart__item__text"><strong>৳ 600</strong></p>
-								</div>
-								<button type="button" class="cart__item__btn" data-cart="remove">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
-										<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
-									</svg>
-								</button>
-							</div>
-						</div>
-
-						<div class="cart__empty text-center">
-							<span class="cart__empty__icon">
-								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 24 24" xmlSpace="preserve">
-									<path fill="currentColor" d="M19 11.5A5.51 5.51 0 0 1 13.5 6H6.35l1.06 8.97 12.89-1a1 1 0 0 0 .91-.87l.29-2.21c-.75.38-1.6.61-2.5.61z"></path>
-									<path fill="#222222" d="M20 17.25H8.43l-.19-1.58 12.11-.95c.82-.07 1.49-.7 1.6-1.52l.14-1.1a.753.753 0 0 0-.65-.84.748.748 0 0 0-.84.65l-.14 1.1a.23.23 0 0 1-.23.21l-12.17.96-.87-7.42h4.8c.41 0 .75-.34.75-.75s-.34-.75-.75-.75H7.01L6.9 4.3a2.766 2.766 0 0 0-2.06-2.35l-2.66-.67c-.4-.1-.81.14-.91.55-.1.4.14.81.55.91l2.66.67c.5.12.88.55.94 1.07l1.53 13c-.99.41-1.7 1.4-1.7 2.54 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75c0-.45-.12-.87-.31-1.25h7.13c-.19.38-.31.8-.31 1.25 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75-1.23-2.75-2.75-2.75zM9.25 20a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM20 21.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM15.97 7.97 17.94 6l-1.97-1.97c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0L19 4.94l1.97-1.97c.29-.29.77-.29 1.06 0s.29.77 0 1.06L20.06 6l1.97 1.97c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22L19 7.06l-1.97 1.97c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06z"></path>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="account-track-order-pane" role="tabpanel" aria-labelledby="account-track-order-tab" tabindex="0">
+					<div class="account-card">
+						<div class="account-card__body d-flex align-items-center justify-content-between flex-wrap">
+							<h1 class="h3 mb-0">Track Your Order</h1>
+							<button type="button" class="btn btn-icon btn-sm btn-danger rounded">
+								<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="1em" height="1em" x="0" y="0" viewBox="0 0 512.021 512.021" xmlSpace="preserve">
+									<path d="M301.258 256.01 502.645 54.645c12.501-12.501 12.501-32.769 0-45.269-12.501-12.501-32.769-12.501-45.269 0L256.01 210.762 54.645 9.376c-12.501-12.501-32.769-12.501-45.269 0s-12.501 32.769 0 45.269L210.762 256.01 9.376 457.376c-12.501 12.501-12.501 32.769 0 45.269s32.769 12.501 45.269 0L256.01 301.258l201.365 201.387c12.501 12.501 32.769 12.501 45.269 0 12.501-12.501 12.501-32.769 0-45.269L301.258 256.01z" fill="currentColor"></path>
 								</svg>
-							</span>
-							<h3 class="cart__empty__title">Your Cart is Empty</h3>
-							<p class="cart__empty__text">Nothing in Your Basket. Time to Browse and Shop</p>
-							<a href="./shop.html" class="btn btn-primary rounded">Start Shopping</a>
+							</button>
+						</div>
+						<div class="hr"></div>
+						<div class="account-card__body">
+							<p class="mb-0">From your account dashboard. you can easily check & view your <button type="button" class="btn-text">recent orders</button> and <button type="button" class="btn-text">edit your password and account details.</button></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 mt-4 mt-lg-0">
-					<div class="cart__header pb-4">
-						<h1 class="cart__header__title">Order Summary</h1>
-					</div>
-					<div class="cart__body">
-						<div key={index} class="cart__header pb-2">
-							<span>৳ 100 x 2</span>
-							<strong>(+) ৳ 200</strong>
-						</div>
-						<div key={index} class="cart__header pb-2">
-							<span>৳ 200 x 3</span>
-							<strong>(+) ৳ 600</strong>
-						</div>
-						<div class="hr mb-2"></div>
-						<div class="cart__header">
-							<h2 class="cart__header__title">Total</h2>
-							<h2 class="cart__header__title">৳ 800</h2>
-						</div>
-						<a href="./checkout.html" class="btn btn-dark text-center w-100 rounded mt-4">Proceed To Checkout</a>
-					</div>
-				</div>
-			</div>
+				<div class="tab-pane fade" id="account-user-details-pane" role="tabpanel" aria-labelledby="account-user-details-tab" tabindex="0">Account Details</div>
+			</div>			
 		</div>
 	</section>
 
@@ -301,24 +318,6 @@
 	<!-- Global Scripts -->
 	<script src="./assets/plugins/jquery/jquery-3.6.4.min.js"></script>
 	<script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- Page Scripts -->
-	<script src="./assets/plugins/toastr/js/toastr.min.js"></script>
-	<!-- Global Scripts -->
 	<script src="./assets/js/script.js"></script>
-	<!-- Page Scripts -->
-	<script>
-		$(document).ready(function () {
-			// Carts function
-			$('[data-cart="increase"]').on('click', function(){
-				toastr.success('Cart Updated')
-			})
-			$('[data-cart="decrease"]').on('click', function(){
-				toastr.success('Cart Updated')
-			})
-			$('[data-cart="remove"]').on('click', function(){
-				toastr.success('Cart removed successfully')
-			})
-		})
-	</script>
 </body>
 </html>

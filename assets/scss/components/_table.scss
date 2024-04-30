@@ -1,0 +1,105 @@
+@use '../abstracts' as *;
+
+table,
+th,
+td
+{
+    border-collapse: collapse;
+}
+
+.table{
+    &-responsive{
+        overflow-x: auto;
+    }
+
+    --bs-table-bg: transparent;
+    --bs-border-width: 0;
+    width: 100%;
+
+    th{
+        white-space: nowrap;
+        @include min-lg{
+            font-size: toRem(18);
+        }
+    }
+
+    th,
+    td
+    {
+        padding: toRem(10);
+    }
+
+    thead th{
+        color: $color-banner-text;
+        background-color: $color-banner-bg;
+    }
+
+    tbody tr{
+        &:not(:first-child) td{
+            @include min-md{
+                border-top: 1px solid $color-border;
+            }
+
+            &:first-child{
+                @include max-sm{
+                    border-top: 1px solid $color-border;
+                }
+            }
+        }
+    }
+    
+    @include max-sm{
+        thead{
+            display: none;
+        }
+
+        tbody td{
+            position: relative;
+            display: block;
+
+            &::before{
+                content: attr(data-th) ' : ';
+                font-weight: 700;
+            }
+        }
+    }
+
+}
+
+.pagination{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    &__btn{
+        --_size: #{toRem(38)};
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: toRem(16);
+        @extend %fw-bold;
+        padding: 8px;
+        min-width: var(--_size);
+        height: var(--_size);
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        color: $color-text;
+        background-color: transparent;
+
+        &:where(:not(:disabled)){
+            @include hover{
+                &:hover,
+                &:focus-visible
+                {
+                    background-color: $color-body;
+                }
+            }
+        }
+
+        &.active{
+            color: $color-white;
+            background-color: $color-primary;
+            border-color: $color-primary;
+        }
+    }
+}

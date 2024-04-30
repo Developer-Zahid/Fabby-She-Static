@@ -1,11 +1,15 @@
 (function ($) {
     "use strict"
 
-	/* Document on load functions */
 	$(window).on('load', function () {
-        // preLoader()
 		headerHeightFixer()
     })
+	$(window).on('resize', function () {
+		headerHeightFixer()
+    })
+	$(window).on('scroll', function(){
+		handleHeaderScrollToHidden()
+	})
 
 	/* Preloader init */
 	function preLoader(){
@@ -46,17 +50,33 @@
 	})()
 
 	/* Fix Header Height function */
-	if($('header').length > 0){
-		$('header').before('<div class="header-height-fix" aria-hidden="true"></div>')
+	if($('.header').length > 0){
+		$('.header').before('<div class="header-height-fix" aria-hidden="true"></div>')
 	}
     function headerHeightFixer(){
-		if($('header').length > 0){
-			$('.header-height-fix').css('height', $('header').innerHeight() +'px')
+		if($('.header').length > 0){
+			$('.header-height-fix').css('height', $('.header').innerHeight() +'px')
+		}
+	}
+	let lastScrollTop
+	function handleHeaderScrollToHidden(){
+		if($('.header').length > 0){
+			let currentScrollTop = window.pageYOffset
+			setTimeout(function(){
+				if(currentScrollTop > $('.header').innerHeight()){
+					$('.header').toggleClass('header--hide', currentScrollTop > lastScrollTop)
+					lastScrollTop = currentScrollTop
+				}else{
+					$('.header').removeClass('header--hide')
+					lastScrollTop = 0
+				}
+			}, 200)
 		}
 	}
 
 	if($('[data-toggle="menu"]').length > 0){
 		$('[data-toggle="menu"]').on('click', function(){
+			$('html').toggleClass('active--menu')
 			$(this).toggleClass('active')
 			$('[data-target="menu"]').toggleClass('show')
 		})
